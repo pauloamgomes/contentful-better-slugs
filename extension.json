@@ -1,0 +1,18 @@
+{
+  "id": "better-slugs",
+  "name": "Better Slugs",
+  "srcdoc": "./build/index.html",
+  "fieldTypes": ["Symbol"],
+  "parameters": {
+    "instance": [
+      {
+        "id": "pattern",
+        "name": "Slug Pattern",
+        "description": "Use replacement tokens: [locale], [field:name], [field:reference:name], e.g. [locale]/[field:category:title]/[field:title]",
+        "type": "Symbol",
+        "required": true,
+        "default": "[field:title]"
+      }
+    ]
+  }
+}
