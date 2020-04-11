@@ -5,7 +5,7 @@ The existing slug functionality in Contentful is limited to one field (title) an
 
 - Work with Gatsby Preview
 - Ability to automatically generate the slug with information from other fields (including referenced fields)
-- Autogeneration of slug doesn't end with entry is published
+- Autogeneration of slug doesn't end when the entry is published
 
 ## Overview
 
@@ -17,9 +17,7 @@ The extension has the following features:
 
 ## Requirements
 
-In order to use this extension you need:
-
-- the UI Extension has to be 3rd party hosted using the src property
+- Contentful CMS account with permissions to manage extensions
 
 ## Instalation (UI - using this repo)
 
