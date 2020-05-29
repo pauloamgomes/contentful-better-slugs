@@ -12,6 +12,14 @@
         "type": "Symbol",
         "required": true,
         "default": "[field:title]"
+      },
+      {
+        "id": "displayDefaultLocale",
+        "name": "Display the default locale",
+        "description": "When using the [locale] token, display or hide the locale in the slug for the default locale.",
+        "type": "Boolean",
+        "required": true,
+        "default": true
       }
     ]
   }
