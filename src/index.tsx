@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
-//
+//==
 import './index.css';
 
 const uslug = require('uslug');
@@ -15,6 +15,8 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   let detachExternalChangeHandler: Function | null = null;
 
   const pattern: string = sdk.parameters.instance.pattern;
+  const displayDefaultLocale: boolean = sdk.parameters.instance.displayDefaultLocale;
+
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
   const [value, setValue] = React.useState('');
@@ -124,7 +126,9 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
         slugParts.push(slug);
       } else if (part === 'locale') {
-        slugParts.push(locale);
+        if (locale !== defaultLocale || (locale === defaultLocale && displayDefaultLocale)) {
+          slugParts.push(locale);
+        }
       } else {
         slugParts.push(part);
       }
