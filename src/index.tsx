@@ -134,7 +134,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       }
     }
 
-    sdk.entry.fields.slug.setValue(
+    sdk.entry.fields[sdk.field.id].setValue(
       slugParts
         .join('/')
         .replace('//', '/')
