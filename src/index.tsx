@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
+import slugify from 'react-slugify';
 //==
 import './index.css';
-
-const uslug = require('uslug');
 
 interface BetterSlugsProps {
   sdk: FieldExtensionSDK;
@@ -16,6 +15,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
   const pattern: string = sdk.parameters.instance.pattern;
   const displayDefaultLocale: boolean = sdk.parameters.instance.displayDefaultLocale;
+  const lockWhenPublished: boolean = sdk.parameters.instance.lockWhenPublished;
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -98,10 +98,23 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
     return '';
   };
 
+  const isLocked = () => {
+    const sys: any = sdk.entry.getSys();
+
+    const published = !!sys.publishedVersion && sys.version == sys.publishedVersion + 1;
+    const changed = !!sys.publishedVersion && sys.version >= sys.publishedVersion + 2;
+
+    return published || changed;
+  };
+
   /**
    * Updates the slug based on the defined pattern.
    */
-  const updateSlug = async (locale: string) => {
+  const updateSlug = async (locale: string, force = false) => {
+    if (!force && lockWhenPublished && isLocked() && sdk.field.getValue()) {
+      return;
+    }
+
     const defaultLocale = sdk.locales.default;
     const slugParts: string[] = [];
 
@@ -122,7 +135,8 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
           raw = await getReferenceFieldValue(fieldParts[1], fieldParts[2], locale);
         }
 
-        const slug = uslug(raw).replace(/[-_\ufe0f]+$/gu, '');
+        // eslint-disable-next-line no-misleading-character-class
+        const slug = slugify(raw).replace(/[-\ufe0f]+$/gu, '');
 
         slugParts.push(slug);
       } else if (part === 'locale') {
@@ -162,7 +176,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   return (
     <div className="container">
       <input width="large" id="slug-field" name="slug" value={value || ''} onChange={onChange} />
-      <button onClick={() => updateSlug(sdk.field.locale)}>reset</button>
+      <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>
     </div>
   );
 };
