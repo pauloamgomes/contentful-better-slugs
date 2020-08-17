@@ -42,7 +42,7 @@
     "contentful-ui-extensions-sdk": "3.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "uslug": "^1.0.4"
+    "react-slugify": "^2.0.1"
   },
   "browserslist": [
     "last 5 Chrome version",
