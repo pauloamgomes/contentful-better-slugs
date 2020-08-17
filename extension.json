@@ -20,6 +20,14 @@
         "type": "Boolean",
         "required": true,
         "default": true
+      },
+      {
+        "id": "lockWhenPublished",
+        "name": "Do not update slug if entry is published",
+        "description": "If the entry is published sometimes is desirable to not change the slug",
+        "type": "Boolean",
+        "required": true,
+        "default": false
       }
     ]
   }
