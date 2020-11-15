@@ -10,12 +10,14 @@ interface BetterSlugsProps {
 }
 
 const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let debounceInterval: any = false;
   let detachExternalChangeHandler: Function | null = null;
-
-  const pattern: string = sdk.parameters.instance.pattern;
-  const displayDefaultLocale: boolean = sdk.parameters.instance.displayDefaultLocale;
-  const lockWhenPublished: boolean = sdk.parameters.instance.lockWhenPublished;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const parameters:any = sdk.parameters;
+  const pattern: string = parameters.instance.pattern || '';
+  const displayDefaultLocale: boolean = parameters.instance.displayDefaultLocale;
+  const lockWhenPublished: boolean = parameters.instance.lockWhenPublished;
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -39,8 +41,8 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       if (Object.prototype.hasOwnProperty.call(sdk.entry.fields, fieldName)) {
         const locales = sdk.entry.fields[fieldName].locales;
 
-        locales.forEach((locale: any) => {
-          sdk.entry.fields[fieldName].onValueChanged(locale, (value: any) => {
+        locales.forEach((locale: string) => {
+          sdk.entry.fields[fieldName].onValueChanged(locale, () => {
             if (debounceInterval) {
               clearInterval(debounceInterval);
             }
@@ -53,7 +55,9 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
     });
 
     // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
-    detachExternalChangeHandler = sdk.field.onValueChanged(onExternalChange);
+    if (sdk.field) {
+      detachExternalChangeHandler = sdk.field.onValueChanged(onExternalChange);
+    }
 
     return () => {
       if (detachExternalChangeHandler) {
@@ -76,6 +80,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       : defaultLocale;
 
     const reference = sdk.entry.fields[fieldName].getValue(referenceLocale);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result: any = await sdk.space.getEntry(reference.sys.id);
     const { fields } = result;
 
