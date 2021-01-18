@@ -18,6 +18,9 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   const pattern: string = parameters.instance.pattern || '';
   const displayDefaultLocale: boolean = parameters.instance.displayDefaultLocale;
   const lockWhenPublished: boolean = parameters.instance.lockWhenPublished;
+  const translations1:string = parameters.instance.translations1 || ''
+  const translations2:string = parameters.instance.translations2 || ''
+  const translations3:string = parameters.instance.translations3 || ''
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -112,6 +115,35 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
     return published || changed;
   };
 
+  const translatePart = (part:string, locale:string) => {
+    const regex = new RegExp(`^${part}=`)
+    let translationConfig = ''
+    let translation = ''
+
+    if (regex.test(translations1)) {
+      translationConfig = translations1
+    } else if (regex.test(translations2)) {
+      translationConfig = translations2
+    } else if (regex.test(translations3)) {
+      translationConfig = translations3
+    }
+
+    translationConfig.replace(`${part}=`, '').split(',').find((val) => {
+      const [transKey, transValue] = val.split(':')
+      if (transKey === locale) {
+        translation = transValue
+        return true
+      }
+    })
+
+    return translation || part
+  }
+
+  const partIsTranslatable = (part:string) => {
+    const regex = new RegExp(`^${part}=`)
+    return (regex.test(translations1) || regex.test(translations2) || regex.test(translations3))
+  }
+
   /**
    * Updates the slug based on the defined pattern.
    */
@@ -148,6 +180,8 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
         if (locale !== defaultLocale || (locale === defaultLocale && displayDefaultLocale)) {
           slugParts.push(locale);
         }
+      } else if (partIsTranslatable(part)) {
+        slugParts.push(translatePart(part, locale))
       } else {
         slugParts.push(part);
       }

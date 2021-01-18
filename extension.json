@@ -14,6 +14,30 @@
         "default": "[field:title]"
       },
       {
+        "id": "translations1",
+        "name": "String translations 1",
+        "description": "To provide translations from a string, for example having a pattern like /products/[field:name] and nl, fr and de locales, you can use products=nl:producten,fr:produits,de:produkte",
+        "type": "Symbol",
+        "required": false,
+        "default": ""
+      },
+      {
+        "id": "translations2",
+        "name": "String translations 2",
+        "description": "Optional translations for a second string (if it exists)",
+        "type": "Symbol",
+        "required": false,
+        "default": ""
+      },
+      {
+        "id": "translations3",
+        "name": "String translations 3",
+        "description": "Optional translations for a third string (if it exists)",
+        "type": "Symbol",
+        "required": false,
+        "default": ""
+      },
+      {
         "id": "displayDefaultLocale",
         "name": "Display the default locale",
         "description": "When using the [locale] token, display or hide the locale in the slug for the default locale.",
