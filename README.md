@@ -58,6 +58,8 @@ Assuming your locale is English, you have a reference field named category with 
 
 Assuming your locale is English, you have a date field named date with value `Friday, April 10th 2020` and your entry title is `London Event` the slug will be: `2020-04-10/london-event`
 
+If you have non dynamic strings in the path and you want to localize them, that would be possible (until a max of 3) using the translations fields, for example having a pattern like `/products/[field:name]` and `nl`, `fr` and `de` locales, you can use `products=nl:producten,fr:produits,de:produkte` and `products` will be `produkte` on the slug field for `de` locale.
+
 ## Optional Usage for Development
 
 After cloning, install the dependencies
