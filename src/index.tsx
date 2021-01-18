@@ -21,6 +21,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   const translations1:string = parameters.instance.translations1 || ''
   const translations2:string = parameters.instance.translations2 || ''
   const translations3:string = parameters.instance.translations3 || ''
+  const hideReset:boolean = parameters.instance.hideReset || false
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -215,7 +216,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   return (
     <div className="container">
       <input width="large" id="slug-field" name="slug" value={value || ''} onChange={onChange} />
-      <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>
+      {!hideReset ? <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>: null}
     </div>
   );
 };

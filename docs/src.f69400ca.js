@@ -28606,6 +28606,7 @@ var BetterSlugs = function BetterSlugs(_a) {
   var translations1 = parameters.instance.translations1 || '';
   var translations2 = parameters.instance.translations2 || '';
   var translations3 = parameters.instance.translations3 || '';
+  var hideReset = parameters.instance.hideReset || false;
   var parts = pattern.split('/').map(function (part) {
     return part.replace(/(\[|\])/gi, '').trim();
   });
@@ -28887,6 +28888,7 @@ var BetterSlugs = function BetterSlugs(_a) {
     });
   };
 
+  console.log(hideReset);
   return React.createElement("div", {
     className: "container"
   }, React.createElement("input", {
@@ -28895,11 +28897,11 @@ var BetterSlugs = function BetterSlugs(_a) {
     name: "slug",
     value: value || '',
     onChange: onChange
-  }), React.createElement("button", {
+  }), !hideReset ? React.createElement("button", {
     onClick: function onClick() {
       return updateSlug(sdk.field.locale, true);
     }
-  }, "reset"));
+  }, "reset") : null);
 };
 
 contentful_ui_extensions_sdk_1.init(function (sdk) {
@@ -28935,7 +28937,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65513" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55320" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

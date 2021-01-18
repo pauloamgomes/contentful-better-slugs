@@ -52,6 +52,14 @@
         "type": "Boolean",
         "required": true,
         "default": false
+      },
+      {
+        "id": "hideReset",
+        "name": "Hide the reset button",
+        "description": "If enabled it will hide the reset button",
+        "type": "Boolean",
+        "required": false,
+        "default": false
       }
     ]
   }
