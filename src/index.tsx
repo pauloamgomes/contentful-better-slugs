@@ -14,14 +14,14 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   let debounceInterval: any = false;
   let detachExternalChangeHandler: Function | null = null;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const parameters:any = sdk.parameters;
+  const parameters: any = sdk.parameters;
   const pattern: string = parameters.instance.pattern || '';
   const displayDefaultLocale: boolean = parameters.instance.displayDefaultLocale;
   const lockWhenPublished: boolean = parameters.instance.lockWhenPublished;
-  const translations1:string = parameters.instance.translations1 || ''
-  const translations2:string = parameters.instance.translations2 || ''
-  const translations3:string = parameters.instance.translations3 || ''
-  const hideReset:boolean = parameters.instance.hideReset || false
+  const translations1: string = parameters.instance.translations1 || '';
+  const translations2: string = parameters.instance.translations2 || '';
+  const translations3: string = parameters.instance.translations3 || '';
+  const hideReset: boolean = parameters.instance.hideReset || false;
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -84,6 +84,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       : defaultLocale;
 
     const reference = sdk.entry.fields[fieldName].getValue(referenceLocale);
+    if (!reference || !reference.sys || !reference.sys.id) {
+      return '';
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result: any = await sdk.space.getEntry(reference.sys.id);
     const { fields } = result;
@@ -116,34 +120,37 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
     return published || changed;
   };
 
-  const translatePart = (part:string, locale:string) => {
-    const regex = new RegExp(`^${part}=`)
-    let translationConfig = ''
-    let translation = ''
+  const translatePart = (part: string, locale: string) => {
+    const regex = new RegExp(`^${part}=`);
+    let translationConfig = '';
+    let translation = '';
 
     if (regex.test(translations1)) {
-      translationConfig = translations1
+      translationConfig = translations1;
     } else if (regex.test(translations2)) {
-      translationConfig = translations2
+      translationConfig = translations2;
     } else if (regex.test(translations3)) {
-      translationConfig = translations3
+      translationConfig = translations3;
     }
 
-    translationConfig.replace(`${part}=`, '').split(',').find((val) => {
-      const [transKey, transValue] = val.split(':')
-      if (transKey === locale) {
-        translation = transValue
-        return true
-      }
-    })
+    translationConfig
+      .replace(`${part}=`, '')
+      .split(',')
+      .find((val) => {
+        const [transKey, transValue] = val.split(':');
+        if (transKey === locale) {
+          translation = transValue;
+          return true;
+        }
+      });
 
-    return translation || part
-  }
+    return translation || part;
+  };
 
-  const partIsTranslatable = (part:string) => {
-    const regex = new RegExp(`^${part}=`)
-    return (regex.test(translations1) || regex.test(translations2) || regex.test(translations3))
-  }
+  const partIsTranslatable = (part: string) => {
+    const regex = new RegExp(`^${part}=`);
+    return regex.test(translations1) || regex.test(translations2) || regex.test(translations3);
+  };
 
   /**
    * Updates the slug based on the defined pattern.
@@ -160,6 +167,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       if (part.startsWith('field:')) {
         const fieldParts = part.split(':');
         let raw = '';
+        let slug = '';
 
         if (fieldParts.length === 2) {
           if (sdk.entry.fields[fieldParts[1]] !== undefined) {
@@ -169,12 +177,16 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
               raw = sdk.entry.fields[fieldParts[1]].getValue(defaultLocale);
             }
           }
+          // eslint-disable-next-line no-misleading-character-class
+          slug = slugify(raw).replace(/[-\ufe0f]+$/gu, '');
         } else {
-          raw = await getReferenceFieldValue(fieldParts[1], fieldParts[2], locale);
+          raw = (await getReferenceFieldValue(fieldParts[1], fieldParts[2], locale)) || '';
+          const preprocessed = raw.replace('/', '---forward-slash---');
+          slug = slugify(preprocessed)
+            .replace('---forward-slash---', '/')
+            // eslint-disable-next-line no-misleading-character-class
+            .replace(/[-\ufe0f]+$/gu, '');
         }
-
-        // eslint-disable-next-line no-misleading-character-class
-        const slug = slugify(raw).replace(/[-\ufe0f]+$/gu, '');
 
         slugParts.push(slug);
       } else if (part === 'locale') {
@@ -182,17 +194,14 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
           slugParts.push(locale);
         }
       } else if (partIsTranslatable(part)) {
-        slugParts.push(translatePart(part, locale))
+        slugParts.push(translatePart(part, locale));
       } else {
         slugParts.push(part);
       }
     }
 
     sdk.entry.fields[sdk.field.id].setValue(
-      slugParts
-        .join('/')
-        .replace('//', '/')
-        .replace(/\/$/, ''),
+      slugParts.join('/').replace('//', '/').replace(/\/$/, ''),
       locale
     );
   };
@@ -216,11 +225,13 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   return (
     <div className="container">
       <input width="large" id="slug-field" name="slug" value={value || ''} onChange={onChange} />
-      {!hideReset ? <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>: null}
+      {!hideReset ? (
+        <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>
+      ) : null}
     </div>
   );
 };
 
-init(sdk => {
+init((sdk) => {
   render(<BetterSlugs sdk={sdk as FieldExtensionSDK} />, document.getElementById('root'));
 });

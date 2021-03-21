@@ -28668,6 +28668,13 @@ var BetterSlugs = function BetterSlugs(_a) {
             defaultLocale = sdk.locales.default;
             referenceLocale = sdk.entry.fields[fieldName].locales.includes(locale) ? locale : defaultLocale;
             reference = sdk.entry.fields[fieldName].getValue(referenceLocale);
+
+            if (!reference || !reference.sys || !reference.sys.id) {
+              return [2
+              /*return*/
+              , ''];
+            }
+
             return [4
             /*yield*/
             , sdk.space.getEntry(reference.sys.id)];
@@ -28756,7 +28763,7 @@ var BetterSlugs = function BetterSlugs(_a) {
     }
 
     return __awaiter(_this, void 0, void 0, function () {
-      var defaultLocale, slugParts, _i, parts_1, part, fieldParts, raw, slug;
+      var defaultLocale, slugParts, _i, parts_1, part, fieldParts, raw, slug, preprocessed;
 
       return __generator(this, function (_a) {
         switch (_a.label) {
@@ -28782,6 +28789,7 @@ var BetterSlugs = function BetterSlugs(_a) {
             , 5];
             fieldParts = part.split(':');
             raw = '';
+            slug = '';
             if (!(fieldParts.length === 2)) return [3
             /*break*/
             , 2];
@@ -28792,8 +28800,10 @@ var BetterSlugs = function BetterSlugs(_a) {
               } else {
                 raw = sdk.entry.fields[fieldParts[1]].getValue(defaultLocale);
               }
-            }
+            } // eslint-disable-next-line no-misleading-character-class
 
+
+            slug = react_slugify_1.default(raw).replace(/[-\ufe0f]+$/gu, '');
             return [3
             /*break*/
             , 4];
@@ -28804,11 +28814,13 @@ var BetterSlugs = function BetterSlugs(_a) {
             , getReferenceFieldValue(fieldParts[1], fieldParts[2], locale)];
 
           case 3:
-            raw = _a.sent();
+            raw = _a.sent() || '';
+            preprocessed = raw.replace('/', '---forward-slash---');
+            slug = react_slugify_1.default(preprocessed).replace('---forward-slash---', '/') // eslint-disable-next-line no-misleading-character-class
+            .replace(/[-\ufe0f]+$/gu, '');
             _a.label = 4;
 
           case 4:
-            slug = react_slugify_1.default(raw).replace(/[-\ufe0f]+$/gu, '');
             slugParts.push(slug);
             return [3
             /*break*/
@@ -28888,7 +28900,6 @@ var BetterSlugs = function BetterSlugs(_a) {
     });
   };
 
-  console.log(hideReset);
   return React.createElement("div", {
     className: "container"
   }, React.createElement("input", {
@@ -28937,7 +28948,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55320" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50879" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

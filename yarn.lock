@@ -7784,9 +7784,9 @@ react-popper@^2.2.3:
     warning "^4.0.2"
 
 react-slugify@^2.0.1:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-slugify/-/react-slugify-2.0.2.tgz#af59ebcb2989b8e80d1863bab598cfad87a43353"
-  integrity sha512-Q9k8rYh2FeSvXD9/p9g+Kk8zXjUpbmgpkZs/EdoVmV2crRMlcSYm7S31bXdnnCdbVGH9z73A0oD/vws1+AZHJQ==
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-slugify/-/react-slugify-2.0.3.tgz#b42528a6d67519c6b99a78368ff2159ea8e67709"
+  integrity sha512-ZsKIECbHNS3EZJ13ArN3n+KHqj77l7B0Y6gzI3W9sz/jNoREUY23VfZJ0626zPQ5uGZv75pnZBmAanG49dOBGg==
 
 react-transition-group@^2.4.0:
   version "2.9.0"
