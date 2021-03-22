@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
-import slugify from 'react-slugify';
+import getSlug from 'speakingurl';
 //==
 import './index.css';
 
@@ -22,6 +22,12 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   const translations2: string = parameters.instance.translations2 || '';
   const translations3: string = parameters.instance.translations3 || '';
   const hideReset: boolean = parameters.instance.hideReset || false;
+  const caseOption: string = parameters.instance.caseOption;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const slugOptions: any = {};
+  if (caseOption) {
+    slugOptions[caseOption] = true;
+  }
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
@@ -178,12 +184,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
             }
           }
           // eslint-disable-next-line no-misleading-character-class
-          slug = slugify(raw).replace(/[-\ufe0f]+$/gu, '');
+          slug = getSlug(raw, slugOptions).replace(/[-\ufe0f]+$/gu, '');
         } else {
           raw = (await getReferenceFieldValue(fieldParts[1], fieldParts[2], locale)) || '';
-          const preprocessed = raw.replace('/', '---forward-slash---');
-          slug = slugify(preprocessed)
-            .replace('---forward-slash---', '/')
+          slug = getSlug(raw, { ...slugOptions, custom: { '/': '/' } })
             // eslint-disable-next-line no-misleading-character-class
             .replace(/[-\ufe0f]+$/gu, '');
         }

@@ -28288,69 +28288,1632 @@ if ("development" === 'production') {
 },{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js":[function(require,module,exports) {
 var define;
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).contentfulExtension=t()}(this,(function(){"use strict";var e=function(t,n){return(e=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(e,t){e.__proto__=t}||function(e,t){for(var n in t)t.hasOwnProperty(n)&&(e[n]=t[n])})(t,n)};var t=function(){return(t=Object.assign||function(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var o in t=arguments[n])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e}).apply(this,arguments)};function n(e){var t="function"==typeof Symbol&&e[Symbol.iterator],n=0;return t?t.call(e):{next:function(){return e&&n>=e.length&&(e=void 0),{value:e&&e[n++],done:!e}}}}function r(e,t){var n="function"==typeof Symbol&&e[Symbol.iterator];if(!n)return e;var r,o,i=n.call(e),a=[];try{for(;(void 0===t||t-- >0)&&!(r=i.next()).done;)a.push(r.value)}catch(e){o={error:e}}finally{try{r&&!r.done&&(n=i.return)&&n.call(i)}finally{if(o)throw o.error}}return a}function o(e){return this instanceof o?(this.v=e,this):new o(e)}var i=Object.freeze({__proto__:null,__extends:function(t,n){function r(){this.constructor=t}e(t,n),t.prototype=null===n?Object.create(n):(r.prototype=n.prototype,new r)},get __assign(){return t},__rest:function(e,t){var n={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&t.indexOf(r)<0&&(n[r]=e[r]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(r=Object.getOwnPropertySymbols(e);o<r.length;o++)t.indexOf(r[o])<0&&Object.prototype.propertyIsEnumerable.call(e,r[o])&&(n[r[o]]=e[r[o]])}return n},__decorate:function(e,t,n,r){var o,i=arguments.length,a=i<3?t:null===r?r=Object.getOwnPropertyDescriptor(t,n):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(e,t,n,r);else for(var l=e.length-1;l>=0;l--)(o=e[l])&&(a=(i<3?o(a):i>3?o(t,n,a):o(t,n))||a);return i>3&&a&&Object.defineProperty(t,n,a),a},__param:function(e,t){return function(n,r){t(n,r,e)}},__metadata:function(e,t){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(e,t)},__awaiter:function(e,t,n,r){return new(n||(n=Promise))((function(o,i){function a(e){try{u(r.next(e))}catch(e){i(e)}}function l(e){try{u(r.throw(e))}catch(e){i(e)}}function u(e){e.done?o(e.value):new n((function(t){t(e.value)})).then(a,l)}u((r=r.apply(e,t||[])).next())}))},__generator:function(e,t){var n,r,o,i,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]};return i={next:l(0),throw:l(1),return:l(2)},"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function l(i){return function(l){return function(i){if(n)throw new TypeError("Generator is already executing.");for(;a;)try{if(n=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=t.call(e,a)}catch(e){i=[6,e],r=0}finally{n=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,l])}}},__exportStar:function(e,t){for(var n in e)t.hasOwnProperty(n)||(t[n]=e[n])},__values:n,__read:r,__spread:function(){for(var e=[],t=0;t<arguments.length;t++)e=e.concat(r(arguments[t]));return e},__spreadArrays:function(){for(var e=0,t=0,n=arguments.length;t<n;t++)e+=arguments[t].length;var r=Array(e),o=0;for(t=0;t<n;t++)for(var i=arguments[t],a=0,l=i.length;a<l;a++,o++)r[o]=i[a];return r},__await:o,__asyncGenerator:function(e,t,n){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var r,i=n.apply(e,t||[]),a=[];return r={},l("next"),l("throw"),l("return"),r[Symbol.asyncIterator]=function(){return this},r;function l(e){i[e]&&(r[e]=function(t){return new Promise((function(n,r){a.push([e,t,n,r])>1||u(e,t)}))})}function u(e,t){try{(n=i[e](t)).value instanceof o?Promise.resolve(n.value.v).then(s,c):f(a[0][2],n)}catch(e){f(a[0][3],e)}var n}function s(e){u("next",e)}function c(e){u("throw",e)}function f(e,t){e(t),a.shift(),a.length&&u(a[0][0],a[0][1])}},__asyncDelegator:function(e){var t,n;return t={},r("next"),r("throw",(function(e){throw e})),r("return"),t[Symbol.iterator]=function(){return this},t;function r(r,i){t[r]=e[r]?function(t){return(n=!n)?{value:o(e[r](t)),done:"return"===r}:i?i(t):t}:i}},__asyncValues:function(e){if(!Symbol.asyncIterator)throw new TypeError("Symbol.asyncIterator is not defined.");var t,r=e[Symbol.asyncIterator];return r?r.call(e):(e=n(e),t={},o("next"),o("throw"),o("return"),t[Symbol.asyncIterator]=function(){return this},t);function o(n){t[n]=e[n]&&function(t){return new Promise((function(r,o){(function(e,t,n,r){Promise.resolve(r).then((function(t){e({value:t,done:n})}),t)})(r,o,(t=e[n](t)).done,t.value)}))}}},__makeTemplateObject:function(e,t){return Object.defineProperty?Object.defineProperty(e,"raw",{value:t}):e.raw=t,e},__importStar:function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t},__importDefault:function(e){return e&&e.__esModule?e:{default:e}}});function a(e,t,n){return e(n={path:t,exports:{},require:function(e,t){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==t&&n.path)}},n.exports),n.exports}var l=a((function(e,t){var n;Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(){this._id=0,this._listeners={}}return e.prototype.dispatch=function(){for(var e,t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];for(var r in this._listeners)(e=this._listeners)[r].apply(e,t)},e.prototype.attach=function(e){var t=this;if("function"!=typeof e)throw new Error("listener function expected");var n=this._id++;return this._listeners[n]=e,function(){return delete t._listeners[n]}},e}();t.Signal=r;var o="__private__memoized__arguments__",a=function(e){function t(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var i=e.call(this)||this;if(i[n]=[],!t.length)throw new Error("Initial value to be memoized expected");return i[o]=t,i}return i.__extends(t,e),t.prototype.dispatch=function(){for(var t=[],n=0;n<arguments.length;n++)t[n]=arguments[n];this[o]=t,e.prototype.dispatch.apply(this,t)},t.prototype.attach=function(t){var n=e.prototype.attach.call(this,t);return t.apply(void 0,this[o]),n},t}(r);t.MemoizedSignal=a,n=o})),u=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){!function(e,t){function n(r){var o=r.data;"connect"===o.method&&(e.removeEventListener("message",n),t.apply(void 0,o.params))}e.addEventListener("message",n)}(e,(function(r,o){var i=new n(r.id,e);t(i,r,o)}))};var n=function(){function e(e,t){var n=this;this._messageHandlers={},this._responseHandlers={},this._send=function(e,t){var n=0;return function(r,o){var i=n++;return t.postMessage({source:e,id:i,method:r,params:o},"*"),i}}(e,t.parent),t.addEventListener("message",(function(e){n._handleMessage(e.data)}))}return e.prototype.call=function(e){for(var t=this,n=[],r=1;r<arguments.length;r++)n[r-1]=arguments[r];var o=this._send(e,n);return new Promise((function(e,n){t._responseHandlers[o]={resolve:e,reject:n}}))},e.prototype.send=function(e){for(var t=[],n=1;n<arguments.length;n++)t[n-1]=arguments[n];this._send(e,t)},e.prototype.addHandler=function(e,t){return e in this._messageHandlers||(this._messageHandlers[e]=new l.Signal),this._messageHandlers[e].attach(t)},e.prototype._handleMessage=function(e){if(e.method){var t=e.method,n=e.params,r=this._messageHandlers[t];r&&r.dispatch.apply(r,n)}else{var o=e.id,i=this._responseHandlers[o];if(!i)return;"result"in e?i.resolve(e.result):"error"in e&&i.reject(e.error),delete this._responseHandlers[o]}},e}();t.Channel=n})),s=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n=i.__importDefault(u);t.default=function(e,t){var r,o=((r={promise:null,resolve:null}).promise=new Promise((function(e){r.resolve=e})),r);return o.promise.then((function(t){var n=t[0],r=e.document;r.addEventListener("focus",(function(){return n.send("setActive",!0)}),!0),r.addEventListener("blur",(function(){return n.send("setActive",!1)}),!0)})),n.default(e,(function(){for(var e=[],t=0;t<arguments.length;t++)e[t]=arguments[t];return o.resolve(e)})),function(n,r){var i=void 0===r?{supressIframeWarning:!1}:r,a=i.makeCustomApi;i.supressIframeWarning||e.self!==e.top||console.error("Cannot use ui-extension-sdk outside of Contenful:\n\nIn order for the ui-extension-sdk to function correctly, your app needs to be run in an iframe in the Contentful Web App.\n\nLearn more about local development with the ui-extension-sdk here:\n  https://www.contentful.com/developers/docs/extensibility/ui-extensions/faq/#how-can-i-use-the-ui-extension-sdk-locally"),o.promise.then((function(r){var o,i=r[0],l=r[1],u=r[2],s=t(i,l,e);"function"==typeof a&&(o=a(i,l)),u.forEach((function(e){i._handleMessage(e)})),n(s,o)}))}}})),c=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n=function(){function e(e,t){var n=this;this.id=t.id,this.locale=t.locale,this.type=t.type,this.required=t.required,this.validations=t.validations,this.items=t.items,this._value=t.value,this._valueSignal=new l.MemoizedSignal(this._value),this._isDisabledSignal=new l.MemoizedSignal(void 0),this._schemaErrorsChangedSignal=new l.MemoizedSignal(void 0),this._channel=e,e.addHandler("valueChanged",(function(e,t,r){e!==n.id||t&&t!==n.locale||(n._value=r,n._valueSignal.dispatch(r))})),e.addHandler("isDisabledChangedForFieldLocale",(function(e,t,r){e===n.id&&t===n.locale&&n._isDisabledSignal.dispatch(r)})),e.addHandler("schemaErrorsChangedForFieldLocale",(function(e,t,r){e===n.id&&t===n.locale&&n._schemaErrorsChangedSignal.dispatch(r)}))}return e.prototype.getValue=function(){return this._value},e.prototype.setValue=function(e){return this._value=e,this._valueSignal.dispatch(e),this._channel.call("setValue",this.id,this.locale,e)},e.prototype.removeValue=function(){return this._value=void 0,this._channel.call("removeValue",this.id,this.locale)},e.prototype.setInvalid=function(e){return this._channel.call("setInvalid",e,this.locale)},e.prototype.onValueChanged=function(e){return this._valueSignal.attach(e)},e.prototype.onIsDisabledChanged=function(e){return this._isDisabledSignal.attach(e)},e.prototype.onSchemaErrorsChanged=function(e){return this._schemaErrorsChangedSignal.attach(e)},e}();t.default=n})),f=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n=i.__importDefault(c),r=function(){function e(e,t,r){this.id=t.id,this.locales=t.locales,this.type=t.type,this.required=t.required,this.validations=t.validations,this.items=t.items,this._defaultLocale=r,this._fieldLocales=t.locales.reduce((function(r,o){var a,l=new n.default(e,{id:t.id,type:t.type,required:t.required,validations:t.validations,items:t.items,locale:o,value:t.values[o]});return i.__assign(i.__assign({},r),((a={})[o]=l,a))}),{}),this.assertHasLocale(r)}return e.prototype.getValue=function(e){return this._getFieldLocale(e).getValue()},e.prototype.setValue=function(e,t){return this._getFieldLocale(t).setValue(e)},e.prototype.removeValue=function(e){return this.setValue(void 0,e)},e.prototype.onValueChanged=function(e,t){var n=t||e;return t||(e=""),this._getFieldLocale(e).onValueChanged(n)},e.prototype.onIsDisabledChanged=function(e,t){var n=t||e;return t||(e=""),this._getFieldLocale(e).onIsDisabledChanged(n)},e.prototype._getFieldLocale=function(e){return e=e||this._defaultLocale,this.assertHasLocale(e),this._fieldLocales[e]},e.prototype.getForLocale=function(e){if(!e)throw new Error("getForLocale must be passed a locale");return this._getFieldLocale(e)},e.prototype.assertHasLocale=function(e){if(!this._fieldLocales[e])throw new Error('Unknown locale "'+e+'" for field "'+this.id+'"')},e}();t.default=r})),d=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){var n,r=e,o=r.document,i=r.MutationObserver,a=function(){s.updateHeight()},l=new i(a),u=!1,s={startAutoResizer:function(){if(s.updateHeight(),u)return;u=!0,l.observe(o.body,{attributes:!0,childList:!0,subtree:!0,characterData:!0}),e.addEventListener("resize",a)},stopAutoResizer:function(){if(!u)return;u=!1,l.disconnect(),e.removeEventListener("resize",a)},updateHeight:function(e){void 0===e&&(e=null);null===e&&(e=Math.ceil(o.documentElement.getBoundingClientRect().height));e!==n&&(t.send("setHeight",e),n=e)}};return s}})),p=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,n,r){var o=t.sys,a=new l.MemoizedSignal(o),u=t.metadata;return e.addHandler("sysChanged",(function(e){o=e,a.dispatch(o)})),i.__assign({getSys:function(){return o},onSysChanged:function(e){return a.attach(e)},fields:n.reduce((function(e,t){return e[t.id]=r(t),e}),{})},u?{metadata:u}:{})}})),h=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n=["getContentType","getEntry","getEntrySnapshots","getAsset","getEditorInterface","getPublishedEntries","getPublishedAssets","getContentTypes","getEntries","getEditorInterfaces","getAssets","createContentType","createEntry","createAsset","updateContentType","updateEntry","updateAsset","deleteContentType","deleteEntry","deleteAsset","publishEntry","publishAsset","unpublishEntry","unpublishAsset","archiveEntry","archiveAsset","unarchiveEntry","unarchiveAsset","createUpload","processAsset","waitUntilAssetProcessed","getUsers","getAllScheduledActions","getEntityScheduledActions","signRequest"];t.default=function(e,t,r){var o={};return n.forEach((function(t){"signRequest"===t&&r&&!r.app||(o[t]=function(){for(var n=[],r=0;r<arguments.length;r++)n[r]=arguments[r];return e.call("callSpaceMethod",t,n)})})),o.getCachedContentTypes=function(){return i.__spreadArrays(t)},o}})),_=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){return"object"!=typeof(t=e)||null===t||Array.isArray(t)?{}:e;var t};t.default=function(e,t){return{openAlert:r.bind(null,"alert"),openConfirm:r.bind(null,"confirm"),openPrompt:r.bind(null,"prompt"),openExtension:o,openCurrentApp:a,openCurrent:function(e){return t.app?a(e):o(i.__assign(i.__assign({},e),{id:t.extension}))},selectSingleEntry:l.bind(null,"Entry",!1),selectSingleAsset:l.bind(null,"Asset",!1),selectMultipleEntries:l.bind(null,"Entry",!0),selectMultipleAssets:l.bind(null,"Asset",!0)};function r(t,r){return e.call("openDialog",t,n(r))}function o(r){if(r=n(r),(r=i.__assign(i.__assign({},r),{id:r.id||t.extension})).id)return e.call("openDialog","extension",r);throw new Error("Extension ID not provided.")}function a(r){if(r=n(r),t.app){var o=i.__assign(i.__assign({},r),{id:t.app});return e.call("openDialog","app",o)}throw new Error("Not in the app context.")}function l(t,r,o){return(o=n(o)).entityType=t,o.multiple=r,e.call("openDialog","entitySelector",o)}}})),y=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){var n=new l.MemoizedSignal(void 0),r=new l.MemoizedSignal(void 0);return e.addHandler("localeSettingsChanged",(function(e){n.dispatch(e)})),e.addHandler("showDisabledFieldsChanged",(function(e){r.dispatch(e)})),{editorInterface:t,onLocaleSettingsChanged:function(e){return n.attach(e)},onShowDisabledFieldsChanged:function(e){return r.attach(e)}}}})),v=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t){var n=new l.Signal;return e.addHandler("navigateSlideIn",(function(e){n.dispatch(e)})),{openEntry:function(t,n){return e.call("navigateToContentEntity",i.__assign(i.__assign({},n),{entityType:"Entry",id:t}))},openNewEntry:function(t,n){return e.call("navigateToContentEntity",i.__assign(i.__assign({},n),{entityType:"Entry",id:null,contentTypeId:t}))},openBulkEditor:function(t,n){return e.call("navigateToBulkEditor",i.__assign({entryId:t},n))},openAsset:function(t,n){return e.call("navigateToContentEntity",i.__assign(i.__assign({},n),{entityType:"Asset",id:t}))},openNewAsset:function(t){return e.call("navigateToContentEntity",i.__assign(i.__assign({},t),{entityType:"Asset",id:null}))},openPageExtension:function(n){return e.call("navigateToPage",i.__assign({type:"extension",id:t.extension},n))},openCurrentAppPage:function(n){return e.call("navigateToPage",i.__assign({type:"app",id:t.app},n))},onSlideInNavigation:function(e){return n.attach(e)}}}})),g=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});var n="preInstall",r="postInstall",o=function(e){return"object"==typeof e&&null!==e&&!Array.isArray(e)},i=function(e){return"function"==typeof e},a=function(e){return console.error(e),Promise.resolve(!1)},l=function(e,t,n){if(!i(e))return Promise.resolve(t);var r;try{r=void 0===n?e():e(n)}catch(e){return a(e)}var l,u=r;return o(l=u)&&i(l.then)||(u=Promise.resolve(u)),u.then((function(e){return e instanceof Error?Promise.reject(e):!1!==e&&(o(e)?e:t)}),a).catch(a)};t.default=function(e){var t,o=((t={}).preInstall=null,t.postInstall=null,t),a=function(e,t){if(!i(t))throw new Error("Handler must be a function.");o[e]=t};return e.addHandler("appHook",(function(t){var i=t.stage,a=t.installationRequestId,u=t.err;return i===n?l(o[i],{}).then((function(t){return e.send("appHookResult",{stage:i,installationRequestId:a,result:t})})):i===r?l(o[i],void 0,u||null).then((function(){return e.send("appHookResult",{stage:i,installationRequestId:a})})):Promise.resolve()})),{setReady:function(){return e.call("callAppMethod","setReady")},isInstalled:function(){return e.call("callAppMethod","isInstalled")},getParameters:function(){return e.call("callAppMethod","getParameters")},getCurrentState:function(){return e.call("callAppMethod","getCurrentState")},onConfigure:function(e){a(n,e)},onConfigurationCompleted:function(e){a(r,e)}}}})),m=a((function(e,t){Object.defineProperty(t,"__esModule",{value:!0});t.default={LOCATION_ENTRY_FIELD:"entry-field",LOCATION_ENTRY_FIELD_SIDEBAR:"entry-field-sidebar",LOCATION_ENTRY_SIDEBAR:"entry-sidebar",LOCATION_DIALOG:"dialog",LOCATION_ENTRY_EDITOR:"entry-editor",LOCATION_PAGE:"page",LOCATION_APP_CONFIG:"app-config"}})),b=a((function(e,t){var n;Object.defineProperty(t,"__esModule",{value:!0});var r=i.__importDefault(f),o=i.__importDefault(c),a=i.__importDefault(d),l=i.__importDefault(p),u=i.__importDefault(h),s=i.__importDefault(_),b=i.__importDefault(y),w=i.__importDefault(v),E=i.__importDefault(g),O=i.__importDefault(m),A=[C,T,function(e,t){var n=t.field;if(!n)throw new Error('FieldAPI called for location without "field" property defined.');return{field:new o.default(e,n)}},P,S],I=((n={})[O.default.LOCATION_ENTRY_FIELD]=A,n[O.default.LOCATION_ENTRY_FIELD_SIDEBAR]=A,n[O.default.LOCATION_ENTRY_SIDEBAR]=[C,T,P,S],n[O.default.LOCATION_ENTRY_EDITOR]=[C,T,P],n[O.default.LOCATION_DIALOG]=[C,function(e){return{close:function(t){return e.send("closeDialog",t)}}},S],n[O.default.LOCATION_PAGE]=[C],n[O.default.LOCATION_APP_CONFIG]=[C,function(e){return{app:E.default(e)}}],n);function C(e,t){var n=t.user,r=t.parameters,o=t.locales,i=t.ids,a=t.initialContentTypes,l=t.location||O.default.LOCATION_ENTRY_FIELD;return{location:{is:function(e){return l===e}},user:n,parameters:r,locales:{available:o.available,default:o.default,names:o.names,fallbacks:o.fallbacks,optional:o.optional,direction:o.direction},space:u.default(e,a,i),dialogs:s.default(e,i),navigator:w.default(e,i),notifier:{success:function(t){return e.send("notify",{type:"success",message:t})},error:function(t){return e.send("notify",{type:"error",message:t})}},ids:i,access:{can:function(t,n){return e.call("checkAccess",t,n)}}}}function S(e,t,n){return{window:a.default(n,e)}}function P(e,t){var n=t.editorInterface;return{editor:b.default(e,n)}}function T(e,t){var n=t.locales,o=t.contentType,i=t.entry,a=t.fieldInfo;return{contentType:o,entry:l.default(e,i,a,(function(t){return new r.default(e,t,n.default)}))}}t.default=function(e,t,n){return(I[t.location]||A).reduce((function(r,o){return i.__assign(i.__assign({},r),o(e,t,n))}),{})}})),w=i.__importDefault(s),E=i.__importDefault(b),O=i.__importDefault(m);return{init:w.default(window,E.default),locations:O.default}}));
-},{}],"../node_modules/react-slugify/dist/slugify.js":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-var stripAccents = function (str) {
-    var accents = 'ÀÁÂÃÄÅĄàáâãäåąÒÓÔÕÕÖØòóôõöøÈÉÊËĘèéêëðęÇĆçćÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠŚšśŸÿýŽŹŻžźżŁłŃń';
-    var fixes = 'AAAAAAAaaaaaaaOOOOOOOooooooEEEEEeeeeeeCCccDIIIIiiiiUUUUuuuuNnSSssYyyZZZzzzLlNn';
-    var split = accents.split('').join('|');
-    var reg = new RegExp("(" + split + ")", 'g');
-    function replacement(a) {
-        return fixes[accents.indexOf(a)] || '';
-    }
-    return str.replace(reg, replacement);
-};
-var harmonize = function (text, delimiter, ignoreInvalid) {
-    if (ignoreInvalid === void 0) { ignoreInvalid = false; }
-    var harmonized = stripAccents(text).trim().toLowerCase();
-    if (ignoreInvalid) {
-        return harmonized.replace(/\s+/g, delimiter);
-    }
-    return harmonized.replace(new RegExp("[^a-z0-9" + delimiter + "]+", 'g'), delimiter);
-};
-var slugify = function (node, options) {
-    if (options === void 0) { options = { delimiter: '-', prefix: '' }; }
-    if (!options.delimiter)
-        options.delimiter = '-';
-    if (!options.prefix)
-        options.prefix = '';
-    if (!node || typeof node === 'boolean') {
-        return '';
-    }
-    var delimiter = options.delimiter, prefix = options.prefix;
-    // string, number
-    if (typeof node === 'string' || typeof node === 'number') {
-        var harmonizedPrefix = harmonize(prefix, delimiter, true);
-        var harmonizedNode = harmonize(String(node), delimiter);
-        if (harmonizedPrefix) {
-            return "" + harmonizedPrefix + delimiter + harmonizedNode;
-        }
-        return harmonizedNode;
-    }
-    // empty object
-    if (typeof node === 'object' && Object.keys(node).length === 0) {
-        return '';
-    }
-    // We did the check about empty object before
-    // const castedNode = node as React.ReactElement<any> | React.ReactNodeArray | React.ReactPortal;
-    // ReactPortal
-    if ('children' in node) {
-        return slugify(node.children);
-    }
-    // ReactNodeArray
-    if (node instanceof Array) {
-        return slugify(node.map(function (n) { return slugify(n, { delimiter: delimiter }); }).join(delimiter), options);
-    }
-    // ReactElement
-    if ('type' in node)
-        return slugify(node.props.children, options);
-    // unhandled case
-    return '';
-};
-exports["default"] = slugify;
+},{}],"../node_modules/speakingurl/lib/speakingurl.js":[function(require,module,exports) {
+var define;
+(function (root) {
+  'use strict';
+  /**
+   * charMap
+   * @type {Object}
+   */
 
-},{}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+  var charMap = {
+    // latin
+    'À': 'A',
+    'Á': 'A',
+    'Â': 'A',
+    'Ã': 'A',
+    'Ä': 'Ae',
+    'Å': 'A',
+    'Æ': 'AE',
+    'Ç': 'C',
+    'È': 'E',
+    'É': 'E',
+    'Ê': 'E',
+    'Ë': 'E',
+    'Ì': 'I',
+    'Í': 'I',
+    'Î': 'I',
+    'Ï': 'I',
+    'Ð': 'D',
+    'Ñ': 'N',
+    'Ò': 'O',
+    'Ó': 'O',
+    'Ô': 'O',
+    'Õ': 'O',
+    'Ö': 'Oe',
+    'Ő': 'O',
+    'Ø': 'O',
+    'Ù': 'U',
+    'Ú': 'U',
+    'Û': 'U',
+    'Ü': 'Ue',
+    'Ű': 'U',
+    'Ý': 'Y',
+    'Þ': 'TH',
+    'ß': 'ss',
+    'à': 'a',
+    'á': 'a',
+    'â': 'a',
+    'ã': 'a',
+    'ä': 'ae',
+    'å': 'a',
+    'æ': 'ae',
+    'ç': 'c',
+    'è': 'e',
+    'é': 'e',
+    'ê': 'e',
+    'ë': 'e',
+    'ì': 'i',
+    'í': 'i',
+    'î': 'i',
+    'ï': 'i',
+    'ð': 'd',
+    'ñ': 'n',
+    'ò': 'o',
+    'ó': 'o',
+    'ô': 'o',
+    'õ': 'o',
+    'ö': 'oe',
+    'ő': 'o',
+    'ø': 'o',
+    'ù': 'u',
+    'ú': 'u',
+    'û': 'u',
+    'ü': 'ue',
+    'ű': 'u',
+    'ý': 'y',
+    'þ': 'th',
+    'ÿ': 'y',
+    'ẞ': 'SS',
+    // language specific
+    // Arabic
+    'ا': 'a',
+    'أ': 'a',
+    'إ': 'i',
+    'آ': 'aa',
+    'ؤ': 'u',
+    'ئ': 'e',
+    'ء': 'a',
+    'ب': 'b',
+    'ت': 't',
+    'ث': 'th',
+    'ج': 'j',
+    'ح': 'h',
+    'خ': 'kh',
+    'د': 'd',
+    'ذ': 'th',
+    'ر': 'r',
+    'ز': 'z',
+    'س': 's',
+    'ش': 'sh',
+    'ص': 's',
+    'ض': 'dh',
+    'ط': 't',
+    'ظ': 'z',
+    'ع': 'a',
+    'غ': 'gh',
+    'ف': 'f',
+    'ق': 'q',
+    'ك': 'k',
+    'ل': 'l',
+    'م': 'm',
+    'ن': 'n',
+    'ه': 'h',
+    'و': 'w',
+    'ي': 'y',
+    'ى': 'a',
+    'ة': 'h',
+    'ﻻ': 'la',
+    'ﻷ': 'laa',
+    'ﻹ': 'lai',
+    'ﻵ': 'laa',
+    // Persian additional characters than Arabic
+    'گ': 'g',
+    'چ': 'ch',
+    'پ': 'p',
+    'ژ': 'zh',
+    'ک': 'k',
+    'ی': 'y',
+    // Arabic diactrics
+    'َ': 'a',
+    'ً': 'an',
+    'ِ': 'e',
+    'ٍ': 'en',
+    'ُ': 'u',
+    'ٌ': 'on',
+    'ْ': '',
+    // Arabic numbers
+    '٠': '0',
+    '١': '1',
+    '٢': '2',
+    '٣': '3',
+    '٤': '4',
+    '٥': '5',
+    '٦': '6',
+    '٧': '7',
+    '٨': '8',
+    '٩': '9',
+    // Persian numbers
+    '۰': '0',
+    '۱': '1',
+    '۲': '2',
+    '۳': '3',
+    '۴': '4',
+    '۵': '5',
+    '۶': '6',
+    '۷': '7',
+    '۸': '8',
+    '۹': '9',
+    // Burmese consonants
+    'က': 'k',
+    'ခ': 'kh',
+    'ဂ': 'g',
+    'ဃ': 'ga',
+    'င': 'ng',
+    'စ': 's',
+    'ဆ': 'sa',
+    'ဇ': 'z',
+    'စျ': 'za',
+    'ည': 'ny',
+    'ဋ': 't',
+    'ဌ': 'ta',
+    'ဍ': 'd',
+    'ဎ': 'da',
+    'ဏ': 'na',
+    'တ': 't',
+    'ထ': 'ta',
+    'ဒ': 'd',
+    'ဓ': 'da',
+    'န': 'n',
+    'ပ': 'p',
+    'ဖ': 'pa',
+    'ဗ': 'b',
+    'ဘ': 'ba',
+    'မ': 'm',
+    'ယ': 'y',
+    'ရ': 'ya',
+    'လ': 'l',
+    'ဝ': 'w',
+    'သ': 'th',
+    'ဟ': 'h',
+    'ဠ': 'la',
+    'အ': 'a',
+    // consonant character combos
+    'ြ': 'y',
+    'ျ': 'ya',
+    'ွ': 'w',
+    'ြွ': 'yw',
+    'ျွ': 'ywa',
+    'ှ': 'h',
+    // independent vowels
+    'ဧ': 'e',
+    '၏': '-e',
+    'ဣ': 'i',
+    'ဤ': '-i',
+    'ဉ': 'u',
+    'ဦ': '-u',
+    'ဩ': 'aw',
+    'သြော': 'aw',
+    'ဪ': 'aw',
+    // numbers
+    '၀': '0',
+    '၁': '1',
+    '၂': '2',
+    '၃': '3',
+    '၄': '4',
+    '၅': '5',
+    '၆': '6',
+    '၇': '7',
+    '၈': '8',
+    '၉': '9',
+    // virama and tone marks which are silent in transliteration
+    '္': '',
+    '့': '',
+    'း': '',
+    // Czech
+    'č': 'c',
+    'ď': 'd',
+    'ě': 'e',
+    'ň': 'n',
+    'ř': 'r',
+    'š': 's',
+    'ť': 't',
+    'ů': 'u',
+    'ž': 'z',
+    'Č': 'C',
+    'Ď': 'D',
+    'Ě': 'E',
+    'Ň': 'N',
+    'Ř': 'R',
+    'Š': 'S',
+    'Ť': 'T',
+    'Ů': 'U',
+    'Ž': 'Z',
+    // Dhivehi
+    'ހ': 'h',
+    'ށ': 'sh',
+    'ނ': 'n',
+    'ރ': 'r',
+    'ބ': 'b',
+    'ޅ': 'lh',
+    'ކ': 'k',
+    'އ': 'a',
+    'ވ': 'v',
+    'މ': 'm',
+    'ފ': 'f',
+    'ދ': 'dh',
+    'ތ': 'th',
+    'ލ': 'l',
+    'ގ': 'g',
+    'ޏ': 'gn',
+    'ސ': 's',
+    'ޑ': 'd',
+    'ޒ': 'z',
+    'ޓ': 't',
+    'ޔ': 'y',
+    'ޕ': 'p',
+    'ޖ': 'j',
+    'ޗ': 'ch',
+    'ޘ': 'tt',
+    'ޙ': 'hh',
+    'ޚ': 'kh',
+    'ޛ': 'th',
+    'ޜ': 'z',
+    'ޝ': 'sh',
+    'ޞ': 's',
+    'ޟ': 'd',
+    'ޠ': 't',
+    'ޡ': 'z',
+    'ޢ': 'a',
+    'ޣ': 'gh',
+    'ޤ': 'q',
+    'ޥ': 'w',
+    'ަ': 'a',
+    'ާ': 'aa',
+    'ި': 'i',
+    'ީ': 'ee',
+    'ު': 'u',
+    'ޫ': 'oo',
+    'ެ': 'e',
+    'ޭ': 'ey',
+    'ޮ': 'o',
+    'ޯ': 'oa',
+    'ް': '',
+    // Georgian https://en.wikipedia.org/wiki/Romanization_of_Georgian
+    // National system (2002)
+    'ა': 'a',
+    'ბ': 'b',
+    'გ': 'g',
+    'დ': 'd',
+    'ე': 'e',
+    'ვ': 'v',
+    'ზ': 'z',
+    'თ': 't',
+    'ი': 'i',
+    'კ': 'k',
+    'ლ': 'l',
+    'მ': 'm',
+    'ნ': 'n',
+    'ო': 'o',
+    'პ': 'p',
+    'ჟ': 'zh',
+    'რ': 'r',
+    'ს': 's',
+    'ტ': 't',
+    'უ': 'u',
+    'ფ': 'p',
+    'ქ': 'k',
+    'ღ': 'gh',
+    'ყ': 'q',
+    'შ': 'sh',
+    'ჩ': 'ch',
+    'ც': 'ts',
+    'ძ': 'dz',
+    'წ': 'ts',
+    'ჭ': 'ch',
+    'ხ': 'kh',
+    'ჯ': 'j',
+    'ჰ': 'h',
+    // Greek
+    'α': 'a',
+    'β': 'v',
+    'γ': 'g',
+    'δ': 'd',
+    'ε': 'e',
+    'ζ': 'z',
+    'η': 'i',
+    'θ': 'th',
+    'ι': 'i',
+    'κ': 'k',
+    'λ': 'l',
+    'μ': 'm',
+    'ν': 'n',
+    'ξ': 'ks',
+    'ο': 'o',
+    'π': 'p',
+    'ρ': 'r',
+    'σ': 's',
+    'τ': 't',
+    'υ': 'y',
+    'φ': 'f',
+    'χ': 'x',
+    'ψ': 'ps',
+    'ω': 'o',
+    'ά': 'a',
+    'έ': 'e',
+    'ί': 'i',
+    'ό': 'o',
+    'ύ': 'y',
+    'ή': 'i',
+    'ώ': 'o',
+    'ς': 's',
+    'ϊ': 'i',
+    'ΰ': 'y',
+    'ϋ': 'y',
+    'ΐ': 'i',
+    'Α': 'A',
+    'Β': 'B',
+    'Γ': 'G',
+    'Δ': 'D',
+    'Ε': 'E',
+    'Ζ': 'Z',
+    'Η': 'I',
+    'Θ': 'TH',
+    'Ι': 'I',
+    'Κ': 'K',
+    'Λ': 'L',
+    'Μ': 'M',
+    'Ν': 'N',
+    'Ξ': 'KS',
+    'Ο': 'O',
+    'Π': 'P',
+    'Ρ': 'R',
+    'Σ': 'S',
+    'Τ': 'T',
+    'Υ': 'Y',
+    'Φ': 'F',
+    'Χ': 'X',
+    'Ψ': 'PS',
+    'Ω': 'O',
+    'Ά': 'A',
+    'Έ': 'E',
+    'Ί': 'I',
+    'Ό': 'O',
+    'Ύ': 'Y',
+    'Ή': 'I',
+    'Ώ': 'O',
+    'Ϊ': 'I',
+    'Ϋ': 'Y',
+    // Latvian
+    'ā': 'a',
+    // 'č': 'c', // duplicate
+    'ē': 'e',
+    'ģ': 'g',
+    'ī': 'i',
+    'ķ': 'k',
+    'ļ': 'l',
+    'ņ': 'n',
+    // 'š': 's', // duplicate
+    'ū': 'u',
+    // 'ž': 'z', // duplicate
+    'Ā': 'A',
+    // 'Č': 'C', // duplicate
+    'Ē': 'E',
+    'Ģ': 'G',
+    'Ī': 'I',
+    'Ķ': 'k',
+    'Ļ': 'L',
+    'Ņ': 'N',
+    // 'Š': 'S', // duplicate
+    'Ū': 'U',
+    // 'Ž': 'Z', // duplicate
+    // Macedonian
+    'Ќ': 'Kj',
+    'ќ': 'kj',
+    'Љ': 'Lj',
+    'љ': 'lj',
+    'Њ': 'Nj',
+    'њ': 'nj',
+    'Тс': 'Ts',
+    'тс': 'ts',
+    // Polish
+    'ą': 'a',
+    'ć': 'c',
+    'ę': 'e',
+    'ł': 'l',
+    'ń': 'n',
+    // 'ó': 'o', // duplicate
+    'ś': 's',
+    'ź': 'z',
+    'ż': 'z',
+    'Ą': 'A',
+    'Ć': 'C',
+    'Ę': 'E',
+    'Ł': 'L',
+    'Ń': 'N',
+    'Ś': 'S',
+    'Ź': 'Z',
+    'Ż': 'Z',
+    // Ukranian
+    'Є': 'Ye',
+    'І': 'I',
+    'Ї': 'Yi',
+    'Ґ': 'G',
+    'є': 'ye',
+    'і': 'i',
+    'ї': 'yi',
+    'ґ': 'g',
+    // Romanian
+    'ă': 'a',
+    'Ă': 'A',
+    'ș': 's',
+    'Ș': 'S',
+    // 'ş': 's', // duplicate
+    // 'Ş': 'S', // duplicate
+    'ț': 't',
+    'Ț': 'T',
+    'ţ': 't',
+    'Ţ': 'T',
+    // Russian https://en.wikipedia.org/wiki/Romanization_of_Russian
+    // ICAO
+    'а': 'a',
+    'б': 'b',
+    'в': 'v',
+    'г': 'g',
+    'д': 'd',
+    'е': 'e',
+    'ё': 'yo',
+    'ж': 'zh',
+    'з': 'z',
+    'и': 'i',
+    'й': 'i',
+    'к': 'k',
+    'л': 'l',
+    'м': 'm',
+    'н': 'n',
+    'о': 'o',
+    'п': 'p',
+    'р': 'r',
+    'с': 's',
+    'т': 't',
+    'у': 'u',
+    'ф': 'f',
+    'х': 'kh',
+    'ц': 'c',
+    'ч': 'ch',
+    'ш': 'sh',
+    'щ': 'sh',
+    'ъ': '',
+    'ы': 'y',
+    'ь': '',
+    'э': 'e',
+    'ю': 'yu',
+    'я': 'ya',
+    'А': 'A',
+    'Б': 'B',
+    'В': 'V',
+    'Г': 'G',
+    'Д': 'D',
+    'Е': 'E',
+    'Ё': 'Yo',
+    'Ж': 'Zh',
+    'З': 'Z',
+    'И': 'I',
+    'Й': 'I',
+    'К': 'K',
+    'Л': 'L',
+    'М': 'M',
+    'Н': 'N',
+    'О': 'O',
+    'П': 'P',
+    'Р': 'R',
+    'С': 'S',
+    'Т': 'T',
+    'У': 'U',
+    'Ф': 'F',
+    'Х': 'Kh',
+    'Ц': 'C',
+    'Ч': 'Ch',
+    'Ш': 'Sh',
+    'Щ': 'Sh',
+    'Ъ': '',
+    'Ы': 'Y',
+    'Ь': '',
+    'Э': 'E',
+    'Ю': 'Yu',
+    'Я': 'Ya',
+    // Serbian
+    'ђ': 'dj',
+    'ј': 'j',
+    // 'љ': 'lj',  // duplicate
+    // 'њ': 'nj', // duplicate
+    'ћ': 'c',
+    'џ': 'dz',
+    'Ђ': 'Dj',
+    'Ј': 'j',
+    // 'Љ': 'Lj', // duplicate
+    // 'Њ': 'Nj', // duplicate
+    'Ћ': 'C',
+    'Џ': 'Dz',
+    // Slovak
+    'ľ': 'l',
+    'ĺ': 'l',
+    'ŕ': 'r',
+    'Ľ': 'L',
+    'Ĺ': 'L',
+    'Ŕ': 'R',
+    // Turkish
+    'ş': 's',
+    'Ş': 'S',
+    'ı': 'i',
+    'İ': 'I',
+    // 'ç': 'c', // duplicate
+    // 'Ç': 'C', // duplicate
+    // 'ü': 'u', // duplicate, see langCharMap
+    // 'Ü': 'U', // duplicate, see langCharMap
+    // 'ö': 'o', // duplicate, see langCharMap
+    // 'Ö': 'O', // duplicate, see langCharMap
+    'ğ': 'g',
+    'Ğ': 'G',
+    // Vietnamese
+    'ả': 'a',
+    'Ả': 'A',
+    'ẳ': 'a',
+    'Ẳ': 'A',
+    'ẩ': 'a',
+    'Ẩ': 'A',
+    'đ': 'd',
+    'Đ': 'D',
+    'ẹ': 'e',
+    'Ẹ': 'E',
+    'ẽ': 'e',
+    'Ẽ': 'E',
+    'ẻ': 'e',
+    'Ẻ': 'E',
+    'ế': 'e',
+    'Ế': 'E',
+    'ề': 'e',
+    'Ề': 'E',
+    'ệ': 'e',
+    'Ệ': 'E',
+    'ễ': 'e',
+    'Ễ': 'E',
+    'ể': 'e',
+    'Ể': 'E',
+    'ỏ': 'o',
+    'ọ': 'o',
+    'Ọ': 'o',
+    'ố': 'o',
+    'Ố': 'O',
+    'ồ': 'o',
+    'Ồ': 'O',
+    'ổ': 'o',
+    'Ổ': 'O',
+    'ộ': 'o',
+    'Ộ': 'O',
+    'ỗ': 'o',
+    'Ỗ': 'O',
+    'ơ': 'o',
+    'Ơ': 'O',
+    'ớ': 'o',
+    'Ớ': 'O',
+    'ờ': 'o',
+    'Ờ': 'O',
+    'ợ': 'o',
+    'Ợ': 'O',
+    'ỡ': 'o',
+    'Ỡ': 'O',
+    'Ở': 'o',
+    'ở': 'o',
+    'ị': 'i',
+    'Ị': 'I',
+    'ĩ': 'i',
+    'Ĩ': 'I',
+    'ỉ': 'i',
+    'Ỉ': 'i',
+    'ủ': 'u',
+    'Ủ': 'U',
+    'ụ': 'u',
+    'Ụ': 'U',
+    'ũ': 'u',
+    'Ũ': 'U',
+    'ư': 'u',
+    'Ư': 'U',
+    'ứ': 'u',
+    'Ứ': 'U',
+    'ừ': 'u',
+    'Ừ': 'U',
+    'ự': 'u',
+    'Ự': 'U',
+    'ữ': 'u',
+    'Ữ': 'U',
+    'ử': 'u',
+    'Ử': 'ư',
+    'ỷ': 'y',
+    'Ỷ': 'y',
+    'ỳ': 'y',
+    'Ỳ': 'Y',
+    'ỵ': 'y',
+    'Ỵ': 'Y',
+    'ỹ': 'y',
+    'Ỹ': 'Y',
+    'ạ': 'a',
+    'Ạ': 'A',
+    'ấ': 'a',
+    'Ấ': 'A',
+    'ầ': 'a',
+    'Ầ': 'A',
+    'ậ': 'a',
+    'Ậ': 'A',
+    'ẫ': 'a',
+    'Ẫ': 'A',
+    // 'ă': 'a', // duplicate
+    // 'Ă': 'A', // duplicate
+    'ắ': 'a',
+    'Ắ': 'A',
+    'ằ': 'a',
+    'Ằ': 'A',
+    'ặ': 'a',
+    'Ặ': 'A',
+    'ẵ': 'a',
+    'Ẵ': 'A',
+    "⓪": "0",
+    "①": "1",
+    "②": "2",
+    "③": "3",
+    "④": "4",
+    "⑤": "5",
+    "⑥": "6",
+    "⑦": "7",
+    "⑧": "8",
+    "⑨": "9",
+    "⑩": "10",
+    "⑪": "11",
+    "⑫": "12",
+    "⑬": "13",
+    "⑭": "14",
+    "⑮": "15",
+    "⑯": "16",
+    "⑰": "17",
+    "⑱": "18",
+    "⑲": "18",
+    "⑳": "18",
+    "⓵": "1",
+    "⓶": "2",
+    "⓷": "3",
+    "⓸": "4",
+    "⓹": "5",
+    "⓺": "6",
+    "⓻": "7",
+    "⓼": "8",
+    "⓽": "9",
+    "⓾": "10",
+    "⓿": "0",
+    "⓫": "11",
+    "⓬": "12",
+    "⓭": "13",
+    "⓮": "14",
+    "⓯": "15",
+    "⓰": "16",
+    "⓱": "17",
+    "⓲": "18",
+    "⓳": "19",
+    "⓴": "20",
+    "Ⓐ": "A",
+    "Ⓑ": "B",
+    "Ⓒ": "C",
+    "Ⓓ": "D",
+    "Ⓔ": "E",
+    "Ⓕ": "F",
+    "Ⓖ": "G",
+    "Ⓗ": "H",
+    "Ⓘ": "I",
+    "Ⓙ": "J",
+    "Ⓚ": "K",
+    "Ⓛ": "L",
+    "Ⓜ": "M",
+    "Ⓝ": "N",
+    "Ⓞ": "O",
+    "Ⓟ": "P",
+    "Ⓠ": "Q",
+    "Ⓡ": "R",
+    "Ⓢ": "S",
+    "Ⓣ": "T",
+    "Ⓤ": "U",
+    "Ⓥ": "V",
+    "Ⓦ": "W",
+    "Ⓧ": "X",
+    "Ⓨ": "Y",
+    "Ⓩ": "Z",
+    "ⓐ": "a",
+    "ⓑ": "b",
+    "ⓒ": "c",
+    "ⓓ": "d",
+    "ⓔ": "e",
+    "ⓕ": "f",
+    "ⓖ": "g",
+    "ⓗ": "h",
+    "ⓘ": "i",
+    "ⓙ": "j",
+    "ⓚ": "k",
+    "ⓛ": "l",
+    "ⓜ": "m",
+    "ⓝ": "n",
+    "ⓞ": "o",
+    "ⓟ": "p",
+    "ⓠ": "q",
+    "ⓡ": "r",
+    "ⓢ": "s",
+    "ⓣ": "t",
+    "ⓤ": "u",
+    "ⓦ": "v",
+    "ⓥ": "w",
+    "ⓧ": "x",
+    "ⓨ": "y",
+    "ⓩ": "z",
+    // symbols
+    '“': '"',
+    '”': '"',
+    '‘': "'",
+    '’': "'",
+    '∂': 'd',
+    'ƒ': 'f',
+    '™': '(TM)',
+    '©': '(C)',
+    'œ': 'oe',
+    'Œ': 'OE',
+    '®': '(R)',
+    '†': '+',
+    '℠': '(SM)',
+    '…': '...',
+    '˚': 'o',
+    'º': 'o',
+    'ª': 'a',
+    '•': '*',
+    '၊': ',',
+    '။': '.',
+    // currency
+    '$': 'USD',
+    '€': 'EUR',
+    '₢': 'BRN',
+    '₣': 'FRF',
+    '£': 'GBP',
+    '₤': 'ITL',
+    '₦': 'NGN',
+    '₧': 'ESP',
+    '₩': 'KRW',
+    '₪': 'ILS',
+    '₫': 'VND',
+    '₭': 'LAK',
+    '₮': 'MNT',
+    '₯': 'GRD',
+    '₱': 'ARS',
+    '₲': 'PYG',
+    '₳': 'ARA',
+    '₴': 'UAH',
+    '₵': 'GHS',
+    '¢': 'cent',
+    '¥': 'CNY',
+    '元': 'CNY',
+    '円': 'YEN',
+    '﷼': 'IRR',
+    '₠': 'EWE',
+    '฿': 'THB',
+    '₨': 'INR',
+    '₹': 'INR',
+    '₰': 'PF',
+    '₺': 'TRY',
+    '؋': 'AFN',
+    '₼': 'AZN',
+    'лв': 'BGN',
+    '៛': 'KHR',
+    '₡': 'CRC',
+    '₸': 'KZT',
+    'ден': 'MKD',
+    'zł': 'PLN',
+    '₽': 'RUB',
+    '₾': 'GEL'
+  };
+  /**
+   * special look ahead character array
+   * These characters form with consonants to become 'single'/consonant combo
+   * @type [Array]
+   */
+
+  var lookAheadCharArray = [// burmese
+  '်', // Dhivehi
+  'ް'];
+  /**
+   * diatricMap for languages where transliteration changes entirely as more diatrics are added
+   * @type {Object}
+   */
+
+  var diatricMap = {
+    // Burmese
+    // dependent vowels
+    'ာ': 'a',
+    'ါ': 'a',
+    'ေ': 'e',
+    'ဲ': 'e',
+    'ိ': 'i',
+    'ီ': 'i',
+    'ို': 'o',
+    'ု': 'u',
+    'ူ': 'u',
+    'ေါင်': 'aung',
+    'ော': 'aw',
+    'ော်': 'aw',
+    'ေါ': 'aw',
+    'ေါ်': 'aw',
+    '်': '်',
+    // this is special case but the character will be converted to latin in the code
+    'က်': 'et',
+    'ိုက်': 'aik',
+    'ောက်': 'auk',
+    'င်': 'in',
+    'ိုင်': 'aing',
+    'ောင်': 'aung',
+    'စ်': 'it',
+    'ည်': 'i',
+    'တ်': 'at',
+    'ိတ်': 'eik',
+    'ုတ်': 'ok',
+    'ွတ်': 'ut',
+    'ေတ်': 'it',
+    'ဒ်': 'd',
+    'ိုဒ်': 'ok',
+    'ုဒ်': 'ait',
+    'န်': 'an',
+    'ာန်': 'an',
+    'ိန်': 'ein',
+    'ုန်': 'on',
+    'ွန်': 'un',
+    'ပ်': 'at',
+    'ိပ်': 'eik',
+    'ုပ်': 'ok',
+    'ွပ်': 'ut',
+    'န်ုပ်': 'nub',
+    'မ်': 'an',
+    'ိမ်': 'ein',
+    'ုမ်': 'on',
+    'ွမ်': 'un',
+    'ယ်': 'e',
+    'ိုလ်': 'ol',
+    'ဉ်': 'in',
+    'ံ': 'an',
+    'ိံ': 'ein',
+    'ုံ': 'on',
+    // Dhivehi
+    'ައް': 'ah',
+    'ަށް': 'ah'
+  };
+  /**
+   * langCharMap language specific characters translations
+   * @type   {Object}
+   */
+
+  var langCharMap = {
+    'en': {},
+    // default language
+    'az': {
+      // Azerbaijani
+      'ç': 'c',
+      'ə': 'e',
+      'ğ': 'g',
+      'ı': 'i',
+      'ö': 'o',
+      'ş': 's',
+      'ü': 'u',
+      'Ç': 'C',
+      'Ə': 'E',
+      'Ğ': 'G',
+      'İ': 'I',
+      'Ö': 'O',
+      'Ş': 'S',
+      'Ü': 'U'
+    },
+    'cs': {
+      // Czech
+      'č': 'c',
+      'ď': 'd',
+      'ě': 'e',
+      'ň': 'n',
+      'ř': 'r',
+      'š': 's',
+      'ť': 't',
+      'ů': 'u',
+      'ž': 'z',
+      'Č': 'C',
+      'Ď': 'D',
+      'Ě': 'E',
+      'Ň': 'N',
+      'Ř': 'R',
+      'Š': 'S',
+      'Ť': 'T',
+      'Ů': 'U',
+      'Ž': 'Z'
+    },
+    'fi': {
+      // Finnish
+      // 'å': 'a', duplicate see charMap/latin
+      // 'Å': 'A', duplicate see charMap/latin
+      'ä': 'a',
+      // ok
+      'Ä': 'A',
+      // ok
+      'ö': 'o',
+      // ok
+      'Ö': 'O' // ok
+
+    },
+    'hu': {
+      // Hungarian
+      'ä': 'a',
+      // ok
+      'Ä': 'A',
+      // ok
+      // 'á': 'a', duplicate see charMap/latin
+      // 'Á': 'A', duplicate see charMap/latin
+      'ö': 'o',
+      // ok
+      'Ö': 'O',
+      // ok
+      // 'ő': 'o', duplicate see charMap/latin
+      // 'Ő': 'O', duplicate see charMap/latin
+      'ü': 'u',
+      'Ü': 'U',
+      'ű': 'u',
+      'Ű': 'U'
+    },
+    'lt': {
+      // Lithuanian
+      'ą': 'a',
+      'č': 'c',
+      'ę': 'e',
+      'ė': 'e',
+      'į': 'i',
+      'š': 's',
+      'ų': 'u',
+      'ū': 'u',
+      'ž': 'z',
+      'Ą': 'A',
+      'Č': 'C',
+      'Ę': 'E',
+      'Ė': 'E',
+      'Į': 'I',
+      'Š': 'S',
+      'Ų': 'U',
+      'Ū': 'U'
+    },
+    'lv': {
+      // Latvian
+      'ā': 'a',
+      'č': 'c',
+      'ē': 'e',
+      'ģ': 'g',
+      'ī': 'i',
+      'ķ': 'k',
+      'ļ': 'l',
+      'ņ': 'n',
+      'š': 's',
+      'ū': 'u',
+      'ž': 'z',
+      'Ā': 'A',
+      'Č': 'C',
+      'Ē': 'E',
+      'Ģ': 'G',
+      'Ī': 'i',
+      'Ķ': 'k',
+      'Ļ': 'L',
+      'Ņ': 'N',
+      'Š': 'S',
+      'Ū': 'u',
+      'Ž': 'Z'
+    },
+    'pl': {
+      // Polish
+      'ą': 'a',
+      'ć': 'c',
+      'ę': 'e',
+      'ł': 'l',
+      'ń': 'n',
+      'ó': 'o',
+      'ś': 's',
+      'ź': 'z',
+      'ż': 'z',
+      'Ą': 'A',
+      'Ć': 'C',
+      'Ę': 'e',
+      'Ł': 'L',
+      'Ń': 'N',
+      'Ó': 'O',
+      'Ś': 'S',
+      'Ź': 'Z',
+      'Ż': 'Z'
+    },
+    'sv': {
+      // Swedish
+      // 'å': 'a', duplicate see charMap/latin
+      // 'Å': 'A', duplicate see charMap/latin
+      'ä': 'a',
+      // ok
+      'Ä': 'A',
+      // ok
+      'ö': 'o',
+      // ok
+      'Ö': 'O' // ok
+
+    },
+    'sk': {
+      // Slovak
+      'ä': 'a',
+      'Ä': 'A'
+    },
+    'sr': {
+      // Serbian
+      'љ': 'lj',
+      'њ': 'nj',
+      'Љ': 'Lj',
+      'Њ': 'Nj',
+      'đ': 'dj',
+      'Đ': 'Dj'
+    },
+    'tr': {
+      // Turkish
+      'Ü': 'U',
+      'Ö': 'O',
+      'ü': 'u',
+      'ö': 'o'
+    }
+  };
+  /**
+   * symbolMap language specific symbol translations
+   * translations must be transliterated already
+   * @type   {Object}
+   */
+
+  var symbolMap = {
+    'ar': {
+      '∆': 'delta',
+      '∞': 'la-nihaya',
+      '♥': 'hob',
+      '&': 'wa',
+      '|': 'aw',
+      '<': 'aqal-men',
+      '>': 'akbar-men',
+      '∑': 'majmou',
+      '¤': 'omla'
+    },
+    'az': {},
+    'ca': {
+      '∆': 'delta',
+      '∞': 'infinit',
+      '♥': 'amor',
+      '&': 'i',
+      '|': 'o',
+      '<': 'menys que',
+      '>': 'mes que',
+      '∑': 'suma dels',
+      '¤': 'moneda'
+    },
+    'cs': {
+      '∆': 'delta',
+      '∞': 'nekonecno',
+      '♥': 'laska',
+      '&': 'a',
+      '|': 'nebo',
+      '<': 'mensi nez',
+      '>': 'vetsi nez',
+      '∑': 'soucet',
+      '¤': 'mena'
+    },
+    'de': {
+      '∆': 'delta',
+      '∞': 'unendlich',
+      '♥': 'Liebe',
+      '&': 'und',
+      '|': 'oder',
+      '<': 'kleiner als',
+      '>': 'groesser als',
+      '∑': 'Summe von',
+      '¤': 'Waehrung'
+    },
+    'dv': {
+      '∆': 'delta',
+      '∞': 'kolunulaa',
+      '♥': 'loabi',
+      '&': 'aai',
+      '|': 'noonee',
+      '<': 'ah vure kuda',
+      '>': 'ah vure bodu',
+      '∑': 'jumula',
+      '¤': 'faisaa'
+    },
+    'en': {
+      '∆': 'delta',
+      '∞': 'infinity',
+      '♥': 'love',
+      '&': 'and',
+      '|': 'or',
+      '<': 'less than',
+      '>': 'greater than',
+      '∑': 'sum',
+      '¤': 'currency'
+    },
+    'es': {
+      '∆': 'delta',
+      '∞': 'infinito',
+      '♥': 'amor',
+      '&': 'y',
+      '|': 'u',
+      '<': 'menos que',
+      '>': 'mas que',
+      '∑': 'suma de los',
+      '¤': 'moneda'
+    },
+    'fa': {
+      '∆': 'delta',
+      '∞': 'bi-nahayat',
+      '♥': 'eshgh',
+      '&': 'va',
+      '|': 'ya',
+      '<': 'kamtar-az',
+      '>': 'bishtar-az',
+      '∑': 'majmooe',
+      '¤': 'vahed'
+    },
+    'fi': {
+      '∆': 'delta',
+      '∞': 'aarettomyys',
+      '♥': 'rakkaus',
+      '&': 'ja',
+      '|': 'tai',
+      '<': 'pienempi kuin',
+      '>': 'suurempi kuin',
+      '∑': 'summa',
+      '¤': 'valuutta'
+    },
+    'fr': {
+      '∆': 'delta',
+      '∞': 'infiniment',
+      '♥': 'Amour',
+      '&': 'et',
+      '|': 'ou',
+      '<': 'moins que',
+      '>': 'superieure a',
+      '∑': 'somme des',
+      '¤': 'monnaie'
+    },
+    'ge': {
+      '∆': 'delta',
+      '∞': 'usasruloba',
+      '♥': 'siqvaruli',
+      '&': 'da',
+      '|': 'an',
+      '<': 'naklebi',
+      '>': 'meti',
+      '∑': 'jami',
+      '¤': 'valuta'
+    },
+    'gr': {},
+    'hu': {
+      '∆': 'delta',
+      '∞': 'vegtelen',
+      '♥': 'szerelem',
+      '&': 'es',
+      '|': 'vagy',
+      '<': 'kisebb mint',
+      '>': 'nagyobb mint',
+      '∑': 'szumma',
+      '¤': 'penznem'
+    },
+    'it': {
+      '∆': 'delta',
+      '∞': 'infinito',
+      '♥': 'amore',
+      '&': 'e',
+      '|': 'o',
+      '<': 'minore di',
+      '>': 'maggiore di',
+      '∑': 'somma',
+      '¤': 'moneta'
+    },
+    'lt': {
+      '∆': 'delta',
+      '∞': 'begalybe',
+      '♥': 'meile',
+      '&': 'ir',
+      '|': 'ar',
+      '<': 'maziau nei',
+      '>': 'daugiau nei',
+      '∑': 'suma',
+      '¤': 'valiuta'
+    },
+    'lv': {
+      '∆': 'delta',
+      '∞': 'bezgaliba',
+      '♥': 'milestiba',
+      '&': 'un',
+      '|': 'vai',
+      '<': 'mazak neka',
+      '>': 'lielaks neka',
+      '∑': 'summa',
+      '¤': 'valuta'
+    },
+    'my': {
+      '∆': 'kwahkhyaet',
+      '∞': 'asaonasme',
+      '♥': 'akhyait',
+      '&': 'nhin',
+      '|': 'tho',
+      '<': 'ngethaw',
+      '>': 'kyithaw',
+      '∑': 'paungld',
+      '¤': 'ngwekye'
+    },
+    'mk': {},
+    'nl': {
+      '∆': 'delta',
+      '∞': 'oneindig',
+      '♥': 'liefde',
+      '&': 'en',
+      '|': 'of',
+      '<': 'kleiner dan',
+      '>': 'groter dan',
+      '∑': 'som',
+      '¤': 'valuta'
+    },
+    'pl': {
+      '∆': 'delta',
+      '∞': 'nieskonczonosc',
+      '♥': 'milosc',
+      '&': 'i',
+      '|': 'lub',
+      '<': 'mniejsze niz',
+      '>': 'wieksze niz',
+      '∑': 'suma',
+      '¤': 'waluta'
+    },
+    'pt': {
+      '∆': 'delta',
+      '∞': 'infinito',
+      '♥': 'amor',
+      '&': 'e',
+      '|': 'ou',
+      '<': 'menor que',
+      '>': 'maior que',
+      '∑': 'soma',
+      '¤': 'moeda'
+    },
+    'ro': {
+      '∆': 'delta',
+      '∞': 'infinit',
+      '♥': 'dragoste',
+      '&': 'si',
+      '|': 'sau',
+      '<': 'mai mic ca',
+      '>': 'mai mare ca',
+      '∑': 'suma',
+      '¤': 'valuta'
+    },
+    'ru': {
+      '∆': 'delta',
+      '∞': 'beskonechno',
+      '♥': 'lubov',
+      '&': 'i',
+      '|': 'ili',
+      '<': 'menshe',
+      '>': 'bolshe',
+      '∑': 'summa',
+      '¤': 'valjuta'
+    },
+    'sk': {
+      '∆': 'delta',
+      '∞': 'nekonecno',
+      '♥': 'laska',
+      '&': 'a',
+      '|': 'alebo',
+      '<': 'menej ako',
+      '>': 'viac ako',
+      '∑': 'sucet',
+      '¤': 'mena'
+    },
+    'sr': {},
+    'tr': {
+      '∆': 'delta',
+      '∞': 'sonsuzluk',
+      '♥': 'ask',
+      '&': 've',
+      '|': 'veya',
+      '<': 'kucuktur',
+      '>': 'buyuktur',
+      '∑': 'toplam',
+      '¤': 'para birimi'
+    },
+    'uk': {
+      '∆': 'delta',
+      '∞': 'bezkinechnist',
+      '♥': 'lubov',
+      '&': 'i',
+      '|': 'abo',
+      '<': 'menshe',
+      '>': 'bilshe',
+      '∑': 'suma',
+      '¤': 'valjuta'
+    },
+    'vn': {
+      '∆': 'delta',
+      '∞': 'vo cuc',
+      '♥': 'yeu',
+      '&': 'va',
+      '|': 'hoac',
+      '<': 'nho hon',
+      '>': 'lon hon',
+      '∑': 'tong',
+      '¤': 'tien te'
+    }
+  };
+  var uricChars = [';', '?', ':', '@', '&', '=', '+', '$', ',', '/'].join('');
+  var uricNoSlashChars = [';', '?', ':', '@', '&', '=', '+', '$', ','].join('');
+  var markChars = ['.', '!', '~', '*', "'", '(', ')'].join('');
+  /**
+   * getSlug
+   * @param  {string} input input string
+   * @param  {object|string} opts config object or separator string/char
+   * @api    public
+   * @return {string}  sluggified string
+   */
+
+  var getSlug = function getSlug(input, opts) {
+    var separator = '-';
+    var result = '';
+    var diatricString = '';
+    var convertSymbols = true;
+    var customReplacements = {};
+    var maintainCase;
+    var titleCase;
+    var truncate;
+    var uricFlag;
+    var uricNoSlashFlag;
+    var markFlag;
+    var symbol;
+    var langChar;
+    var lucky;
+    var i;
+    var ch;
+    var l;
+    var lastCharWasSymbol;
+    var lastCharWasDiatric;
+    var allowedChars = '';
+
+    if (typeof input !== 'string') {
+      return '';
+    }
+
+    if (typeof opts === 'string') {
+      separator = opts;
+    }
+
+    symbol = symbolMap.en;
+    langChar = langCharMap.en;
+
+    if (typeof opts === 'object') {
+      maintainCase = opts.maintainCase || false;
+      customReplacements = opts.custom && typeof opts.custom === 'object' ? opts.custom : customReplacements;
+      truncate = +opts.truncate > 1 && opts.truncate || false;
+      uricFlag = opts.uric || false;
+      uricNoSlashFlag = opts.uricNoSlash || false;
+      markFlag = opts.mark || false;
+      convertSymbols = opts.symbols === false || opts.lang === false ? false : true;
+      separator = opts.separator || separator;
+
+      if (uricFlag) {
+        allowedChars += uricChars;
+      }
+
+      if (uricNoSlashFlag) {
+        allowedChars += uricNoSlashChars;
+      }
+
+      if (markFlag) {
+        allowedChars += markChars;
+      }
+
+      symbol = opts.lang && symbolMap[opts.lang] && convertSymbols ? symbolMap[opts.lang] : convertSymbols ? symbolMap.en : {};
+      langChar = opts.lang && langCharMap[opts.lang] ? langCharMap[opts.lang] : opts.lang === false || opts.lang === true ? {} : langCharMap.en; // if titleCase config is an Array, rewrite to object format
+
+      if (opts.titleCase && typeof opts.titleCase.length === 'number' && Array.prototype.toString.call(opts.titleCase)) {
+        opts.titleCase.forEach(function (v) {
+          customReplacements[v + ''] = v + '';
+        });
+        titleCase = true;
+      } else {
+        titleCase = !!opts.titleCase;
+      } // if custom config is an Array, rewrite to object format
+
+
+      if (opts.custom && typeof opts.custom.length === 'number' && Array.prototype.toString.call(opts.custom)) {
+        opts.custom.forEach(function (v) {
+          customReplacements[v + ''] = v + '';
+        });
+      } // custom replacements
+
+
+      Object.keys(customReplacements).forEach(function (v) {
+        var r;
+
+        if (v.length > 1) {
+          r = new RegExp('\\b' + escapeChars(v) + '\\b', 'gi');
+        } else {
+          r = new RegExp(escapeChars(v), 'gi');
+        }
+
+        input = input.replace(r, customReplacements[v]);
+      }); // add all custom replacement to allowed charlist
+
+      for (ch in customReplacements) {
+        allowedChars += ch;
+      }
+    }
+
+    allowedChars += separator; // escape all necessary chars
+
+    allowedChars = escapeChars(allowedChars); // trim whitespaces
+
+    input = input.replace(/(^\s+|\s+$)/g, '');
+    lastCharWasSymbol = false;
+    lastCharWasDiatric = false;
+
+    for (i = 0, l = input.length; i < l; i++) {
+      ch = input[i];
+
+      if (isReplacedCustomChar(ch, customReplacements)) {
+        // don't convert a already converted char
+        lastCharWasSymbol = false;
+      } else if (langChar[ch]) {
+        // process language specific diactrics chars conversion
+        ch = lastCharWasSymbol && langChar[ch].match(/[A-Za-z0-9]/) ? ' ' + langChar[ch] : langChar[ch];
+        lastCharWasSymbol = false;
+      } else if (ch in charMap) {
+        // the transliteration changes entirely when some special characters are added
+        if (i + 1 < l && lookAheadCharArray.indexOf(input[i + 1]) >= 0) {
+          diatricString += ch;
+          ch = '';
+        } else if (lastCharWasDiatric === true) {
+          ch = diatricMap[diatricString] + charMap[ch];
+          diatricString = '';
+        } else {
+          // process diactrics chars
+          ch = lastCharWasSymbol && charMap[ch].match(/[A-Za-z0-9]/) ? ' ' + charMap[ch] : charMap[ch];
+        }
+
+        lastCharWasSymbol = false;
+        lastCharWasDiatric = false;
+      } else if (ch in diatricMap) {
+        diatricString += ch;
+        ch = ''; // end of string, put the whole meaningful word
+
+        if (i === l - 1) {
+          ch = diatricMap[diatricString];
+        }
+
+        lastCharWasDiatric = true;
+      } else if ( // process symbol chars
+      symbol[ch] && !(uricFlag && uricChars.indexOf(ch) !== -1) && !(uricNoSlashFlag && uricNoSlashChars // .indexOf(ch) !== -1) && !(markFlag && markChars
+      .indexOf(ch) !== -1)) {
+        ch = lastCharWasSymbol || result.substr(-1).match(/[A-Za-z0-9]/) ? separator + symbol[ch] : symbol[ch];
+        ch += input[i + 1] !== void 0 && input[i + 1].match(/[A-Za-z0-9]/) ? separator : '';
+        lastCharWasSymbol = true;
+      } else {
+        if (lastCharWasDiatric === true) {
+          ch = diatricMap[diatricString] + ch;
+          diatricString = '';
+          lastCharWasDiatric = false;
+        } else if (lastCharWasSymbol && (/[A-Za-z0-9]/.test(ch) || result.substr(-1).match(/A-Za-z0-9]/))) {
+          // process latin chars
+          ch = ' ' + ch;
+        }
+
+        lastCharWasSymbol = false;
+      } // add allowed chars
+
+
+      result += ch.replace(new RegExp('[^\\w\\s' + allowedChars + '_-]', 'g'), separator);
+    }
+
+    if (titleCase) {
+      result = result.replace(/(\w)(\S*)/g, function (_, i, r) {
+        var j = i.toUpperCase() + (r !== null ? r : '');
+        return Object.keys(customReplacements).indexOf(j.toLowerCase()) < 0 ? j : j.toLowerCase();
+      });
+    } // eliminate duplicate separators
+    // add separator
+    // trim separators from start and end
+
+
+    result = result.replace(/\s+/g, separator).replace(new RegExp('\\' + separator + '+', 'g'), separator).replace(new RegExp('(^\\' + separator + '+|\\' + separator + '+$)', 'g'), '');
+
+    if (truncate && result.length > truncate) {
+      lucky = result.charAt(truncate) === separator;
+      result = result.slice(0, truncate);
+
+      if (!lucky) {
+        result = result.slice(0, result.lastIndexOf(separator));
+      }
+    }
+
+    if (!maintainCase && !titleCase) {
+      result = result.toLowerCase();
+    }
+
+    return result;
+  };
+  /**
+   * createSlug curried(opts)(input)
+   * @param   {object|string} opts config object or input string
+   * @return  {Function} function getSlugWithConfig()
+   **/
+
+
+  var createSlug = function createSlug(opts) {
+    /**
+     * getSlugWithConfig
+     * @param   {string} input string
+     * @return  {string} slug string
+     */
+    return function getSlugWithConfig(input) {
+      return getSlug(input, opts);
+    };
+  };
+  /**
+   * escape Chars
+   * @param   {string} input string
+   */
+
+
+  var escapeChars = function escapeChars(input) {
+    return input.replace(/[-\\^$*+?.()|[\]{}\/]/g, '\\$&');
+  };
+  /**
+   * check if the char is an already converted char from custom list
+   * @param   {char} ch character to check
+   * @param   {object} customReplacements custom translation map
+   */
+
+
+  var isReplacedCustomChar = function (ch, customReplacements) {
+    for (var c in customReplacements) {
+      if (customReplacements[c] === ch) {
+        return true;
+      }
+    }
+  };
+
+  if (typeof module !== 'undefined' && module.exports) {
+    // export functions for use in Node
+    module.exports = getSlug;
+    module.exports.createSlug = createSlug;
+  } else if (typeof define !== 'undefined' && define.amd) {
+    // export function for use in AMD
+    define([], function () {
+      return getSlug;
+    });
+  } else {
+    // don't overwrite global if exists
+    try {
+      if (root.getSlug || root.createSlug) {
+        throw 'speakingurl: globals exists /(getSlug|createSlug)/';
+      } else {
+        root.getSlug = getSlug;
+        root.createSlug = createSlug;
+      }
+    } catch (e) {}
+  }
+})(this);
+},{}],"../node_modules/speakingurl/index.js":[function(require,module,exports) {
+module.exports = require('./lib/speakingurl');
+},{"./lib/speakingurl":"../node_modules/speakingurl/lib/speakingurl.js"}],"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -28425,6 +29988,20 @@ module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.tsx":[function(require,module,exports) {
 "use strict";
 
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+
+      for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+
+    return t;
+  };
+
+  return __assign.apply(this, arguments);
+};
+
 var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
   return new (P || (P = Promise))(function (resolve, reject) {
     function fulfilled(value) {
@@ -28456,7 +30033,7 @@ var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, gene
 var __generator = this && this.__generator || function (thisArg, body) {
   var _ = {
     label: 0,
-    sent: function sent() {
+    sent: function () {
       if (t[0] & 1) throw t[1];
       return t[1];
     },
@@ -28588,12 +30165,12 @@ var react_dom_1 = require("react-dom");
 
 var contentful_ui_extensions_sdk_1 = require("contentful-ui-extensions-sdk");
 
-var react_slugify_1 = __importDefault(require("react-slugify")); //==
+var speakingurl_1 = __importDefault(require("speakingurl")); //==
 
 
 require("./index.css");
 
-var BetterSlugs = function BetterSlugs(_a) {
+var BetterSlugs = function (_a) {
   var sdk = _a.sdk; // eslint-disable-next-line @typescript-eslint/no-explicit-any
 
   var debounceInterval = false;
@@ -28607,6 +30184,14 @@ var BetterSlugs = function BetterSlugs(_a) {
   var translations2 = parameters.instance.translations2 || '';
   var translations3 = parameters.instance.translations3 || '';
   var hideReset = parameters.instance.hideReset || false;
+  var caseOption = parameters.instance.caseOption; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+  var slugOptions = {};
+
+  if (caseOption) {
+    slugOptions[caseOption] = true;
+  }
+
   var parts = pattern.split('/').map(function (part) {
     return part.replace(/(\[|\])/gi, '').trim();
   });
@@ -28659,7 +30244,7 @@ var BetterSlugs = function BetterSlugs(_a) {
    * Retrieves the raw value from a referenced field.
    */
 
-  var getReferenceFieldValue = function getReferenceFieldValue(fieldName, subFieldName, locale) {
+  var getReferenceFieldValue = function (fieldName, subFieldName, locale) {
     return __awaiter(_this, void 0, void 0, function () {
       var defaultLocale, referenceLocale, reference, result, fields;
       return __generator(this, function (_a) {
@@ -28715,14 +30300,14 @@ var BetterSlugs = function BetterSlugs(_a) {
     });
   };
 
-  var isLocked = function isLocked() {
+  var isLocked = function () {
     var sys = sdk.entry.getSys();
     var published = !!sys.publishedVersion && sys.version == sys.publishedVersion + 1;
     var changed = !!sys.publishedVersion && sys.version >= sys.publishedVersion + 2;
     return published || changed;
   };
 
-  var translatePart = function translatePart(part, locale) {
+  var translatePart = function (part, locale) {
     var regex = new RegExp("^" + part + "=");
     var translationConfig = '';
     var translation = '';
@@ -28748,7 +30333,7 @@ var BetterSlugs = function BetterSlugs(_a) {
     return translation || part;
   };
 
-  var partIsTranslatable = function partIsTranslatable(part) {
+  var partIsTranslatable = function (part) {
     var regex = new RegExp("^" + part + "=");
     return regex.test(translations1) || regex.test(translations2) || regex.test(translations3);
   };
@@ -28757,13 +30342,13 @@ var BetterSlugs = function BetterSlugs(_a) {
    */
 
 
-  var updateSlug = function updateSlug(locale, force) {
+  var updateSlug = function (locale, force) {
     if (force === void 0) {
       force = false;
     }
 
     return __awaiter(_this, void 0, void 0, function () {
-      var defaultLocale, slugParts, _i, parts_1, part, fieldParts, raw, slug, preprocessed;
+      var defaultLocale, slugParts, _i, parts_1, part, fieldParts, raw, slug;
 
       return __generator(this, function (_a) {
         switch (_a.label) {
@@ -28803,7 +30388,7 @@ var BetterSlugs = function BetterSlugs(_a) {
             } // eslint-disable-next-line no-misleading-character-class
 
 
-            slug = react_slugify_1.default(raw).replace(/[-\ufe0f]+$/gu, '');
+            slug = speakingurl_1.default(raw, slugOptions).replace(/[-\ufe0f]+$/gu, '');
             return [3
             /*break*/
             , 4];
@@ -28815,8 +30400,11 @@ var BetterSlugs = function BetterSlugs(_a) {
 
           case 3:
             raw = _a.sent() || '';
-            preprocessed = raw.replace('/', '---forward-slash---');
-            slug = react_slugify_1.default(preprocessed).replace('---forward-slash---', '/') // eslint-disable-next-line no-misleading-character-class
+            slug = speakingurl_1.default(raw, __assign({}, slugOptions, {
+              custom: {
+                '/': '/'
+              }
+            })) // eslint-disable-next-line no-misleading-character-class
             .replace(/[-\ufe0f]+$/gu, '');
             _a.label = 4;
 
@@ -28855,11 +30443,11 @@ var BetterSlugs = function BetterSlugs(_a) {
     });
   };
 
-  var onExternalChange = function onExternalChange(value) {
+  var onExternalChange = function (value) {
     setValue(value);
   };
 
-  var onChange = function onChange(e) {
+  var onChange = function (e) {
     return __awaiter(_this, void 0, void 0, function () {
       var value;
       return __generator(this, function (_a) {
@@ -28909,7 +30497,7 @@ var BetterSlugs = function BetterSlugs(_a) {
     value: value || '',
     onChange: onChange
   }), !hideReset ? React.createElement("button", {
-    onClick: function onClick() {
+    onClick: function () {
       return updateSlug(sdk.field.locale, true);
     }
   }, "reset") : null);
@@ -28920,7 +30508,7 @@ contentful_ui_extensions_sdk_1.init(function (sdk) {
     sdk: sdk
   }), document.getElementById('root'));
 });
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","contentful-ui-extensions-sdk":"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js","react-slugify":"../node_modules/react-slugify/dist/slugify.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","contentful-ui-extensions-sdk":"../node_modules/contentful-ui-extensions-sdk/dist/cf-extension-api.js","speakingurl":"../node_modules/speakingurl/index.js","./index.css":"index.css"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -28948,7 +30536,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50879" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54336" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -13,7 +13,7 @@ The extension has the following features:
 
 - Generate a dynamic slug based on a pattern defined for each Content Model
 
-![Screencast](https://monosnap.com/image/5X63iQHS9YQ3AfYNPzEPZEIxAmTISY)
+![Screenshot](https://i.snipboard.io/zMLGUX.jpg)
 
 ## Requirements
 
@@ -60,6 +60,16 @@ Assuming your locale is English, you have a date field named date with value `Fr
 
 If you have non dynamic strings in the path and you want to localize them, that would be possible (until a max of 3) using the translations fields, for example having a pattern like `/products/[field:name]` and `nl`, `fr` and `de` locales, you can use `products=nl:producten,fr:produits,de:produkte` and `products` will be `produkte` on the slug field for `de` locale.
 
+Other options:
+
+Ability to translate strings from the pattern:
+
+![Screenshot](https://i.snipboard.io/f6td87.jpg)
+
+Option to not update the slug automatically if entry is published, hide the reset button and set the case mode (lowercase, maintain case, title case):
+
+![Screenshot](https://i.snipboard.io/h6f30r.jpg)
+
 ## Optional Usage for Development
 
 After cloning, install the dependencies
@@ -89,6 +99,8 @@ contentful extension update --force
 ## Limitations
 
 Tested only with text and date fields, so not sure how it can behave with custom fields, it will depend on the value stored in the field.
+
+The slug generation is based on the speakingurl library - https://github.com/pid/speakingurl
 
 ## Todo
 

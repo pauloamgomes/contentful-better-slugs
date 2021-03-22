@@ -60,6 +60,14 @@
         "type": "Boolean",
         "required": false,
         "default": false
+      },
+      {
+        "id": "caseOption",
+        "name": "Case Option",
+        "description": "Set the case mode (if not defined uses lowercase)",
+        "type": "Enum",
+        "required": false,
+        "options": [{"maintainCase": "Maintain Case"}, {"titleCase": "Title Case"}]
       }
     ]
   }
