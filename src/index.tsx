@@ -9,6 +9,37 @@ interface BetterSlugsProps {
   sdk: FieldExtensionSDK;
 }
 
+const languages: any = {
+  ar: 'ar',
+  az: 'az',
+  cs: 'cs',
+  de: 'de',
+  dv: 'dv',
+  en: 'en',
+  es: 'es',
+  fa: 'fa',
+  fi: 'fi',
+  fr: 'fr',
+  ge: 'ge',
+  gr: 'gr',
+  hu: 'hu',
+  it: 'it',
+  lt: 'lt',
+  lv: 'lv',
+  my: 'my',
+  mk: 'mk',
+  nl: 'nl',
+  pl: 'pl',
+  pt: 'pt',
+  ro: 'ro',
+  ru: 'ru',
+  sk: 'sk',
+  sr: 'sr',
+  tr: 'tr',
+  uk: 'uk',
+  vn: 'vn',
+};
+
 const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let debounceInterval: any = false;
@@ -175,6 +206,8 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
         let raw = '';
         let slug = '';
 
+        const lang: string = languages[locale.slice(0, 2).toLowerCase()] || 'en';
+
         if (fieldParts.length === 2) {
           if (sdk.entry.fields[fieldParts[1]] !== undefined) {
             if (sdk.entry.fields[fieldParts[1]].locales.includes(locale)) {
@@ -184,10 +217,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
             }
           }
           // eslint-disable-next-line no-misleading-character-class
-          slug = getSlug(raw, slugOptions).replace(/[-\ufe0f]+$/gu, '');
+          slug = getSlug(raw, { ...slugOptions, lang }).replace(/[-\ufe0f]+$/gu, '');
         } else {
           raw = (await getReferenceFieldValue(fieldParts[1], fieldParts[2], locale)) || '';
-          slug = getSlug(raw, { ...slugOptions, custom: { '/': '/' } })
+          slug = getSlug(raw, { ...slugOptions, lang, custom: { '/': '/' } })
             // eslint-disable-next-line no-misleading-character-class
             .replace(/[-\ufe0f]+$/gu, '');
         }
