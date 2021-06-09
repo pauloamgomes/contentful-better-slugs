@@ -193,7 +193,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
    * Updates the slug based on the defined pattern.
    */
   const updateSlug = async (locale: string, force = false) => {
-    if (!force && lockWhenPublished && isLocked() && sdk.field.getValue()) {
+    if (
+      sdk.field.locale !== locale ||
+      (!force && lockWhenPublished && isLocked() && sdk.field.getValue())
+    ) {
       return;
     }
 
