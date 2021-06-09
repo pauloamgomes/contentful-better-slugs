@@ -28,7 +28,7 @@
   "scripts": {
     "start": "contentful-extension-scripts start",
     "build": "contentful-extension-scripts build",
-    "dist": "yarn build && rm -rf ./docs/* && cp ./build/* ./docs/",
+    "dist": "rm -rf ./build/* && yarn build && rm -rf ./docs/* && cp ./build/* ./docs/",
     "lint": "eslint ./ --ext .js,.jsx,.ts,.tsx && tsc -p ./ --noEmit",
     "deploy": "npm run build && contentful extension update --force",
     "configure": "contentful space use && contentful space environment use",

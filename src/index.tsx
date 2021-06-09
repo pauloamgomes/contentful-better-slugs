@@ -1,4 +1,6 @@
-import * as React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import React, { useState, useRef, useEffect } from 'react';
 import { render } from 'react-dom';
 import { init, FieldExtensionSDK } from 'contentful-ui-extensions-sdk';
 import getSlug from 'speakingurl';
@@ -41,10 +43,8 @@ const languages: any = {
 };
 
 const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let debounceInterval: any = false;
-  let detachExternalChangeHandler: Function | null = null;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const debounceInterval: any = useRef(false);
+  const detachExternalChangeHandler: any = useRef(null);
   const parameters: any = sdk.parameters;
   const pattern: string = parameters.instance.pattern || '';
   const displayDefaultLocale: boolean = parameters.instance.displayDefaultLocale;
@@ -54,7 +54,6 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   const translations3: string = parameters.instance.translations3 || '';
   const hideReset: boolean = parameters.instance.hideReset || false;
   const caseOption: string = parameters.instance.caseOption;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const slugOptions: any = {};
   if (caseOption) {
     slugOptions[caseOption] = true;
@@ -62,10 +61,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
   const parts = pattern.split('/').map((part: string) => part.replace(/(\[|\])/gi, '').trim());
 
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = useState('');
   const fields: string[] = [];
 
-  React.useEffect(() => {
+  useEffect(() => {
     sdk.window.startAutoResizer();
 
     // Extract fields used in slug parts.
@@ -84,10 +83,10 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
         locales.forEach((locale: string) => {
           sdk.entry.fields[fieldName].onValueChanged(locale, () => {
-            if (debounceInterval) {
-              clearInterval(debounceInterval);
+            if (debounceInterval.current) {
+              clearInterval(debounceInterval.current);
             }
-            debounceInterval = setTimeout(() => {
+            debounceInterval.current = setTimeout(() => {
               updateSlug(locale);
             }, 500);
           });
@@ -97,14 +96,15 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
     // Handler for external field value changes (e.g. when multiple authors are working on the same entry).
     if (sdk.field) {
-      detachExternalChangeHandler = sdk.field.onValueChanged(onExternalChange);
+      detachExternalChangeHandler.current = sdk.field.onValueChanged(onExternalChange);
     }
 
     return () => {
-      if (detachExternalChangeHandler) {
-        detachExternalChangeHandler();
+      if (detachExternalChangeHandler.current) {
+        detachExternalChangeHandler.current();
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
@@ -193,10 +193,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
    * Updates the slug based on the defined pattern.
    */
   const updateSlug = async (locale: string, force = false) => {
-    if (
-      sdk.field.locale !== locale ||
-      (!force && lockWhenPublished && isLocked() && sdk.field.getValue())
-    ) {
+    if (sdk.field.locale !== locale || (!force && lockWhenPublished && isLocked())) {
       return;
     }
 
