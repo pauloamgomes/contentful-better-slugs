@@ -11,23 +11,37 @@ div {
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
+.iframe {
+  height: 50px,
+}
 .container {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  margin: 3px;
 }
-
 .container input {
-  outline: none;
-  background-color: #fff;
-  border: 1px solid #d3dce0;
-  max-height: 2.5rem;
-  color: #536171;
-  font-size: 0.875rem;
-  padding: 0.65625rem;
-  margin: 0;
-  width: 100%;
   -webkit-appearance: textfield;
+  background-color: #fff;
+  border: 1px solid #cfd9e0;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0 2px 0 #e1e4e833;
+  box-shadow: inset 0 2px 0 #e1e4e833;
+  color: #414d63;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
+    Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 0.875rem;
+  margin: 0;
+  max-height: 2.5rem;
+  outline: none;
+  padding: 0.65625rem;
+  width: 100%;
+}
+.container input:focus {
+  border: 1px solid #036fe3;
+  -webkit-box-shadow: 0 0 0 3px #98cbff;
+  box-shadow: 0 0 0 3px #98cbff;
+  outline: none;
 }
 
 .container button {
