@@ -51,7 +51,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
   const lockWhenPublished: boolean = parameters.instance.lockWhenPublished;
   const translations1: string = parameters.instance.translations1 || '';
   const translations2: string = parameters.instance.translations2 || '';
-  const translations3: string = parameters.instance.translations3 || '';
+  const readonly: boolean = parameters.instance.readonly || false;
   const hideReset: boolean = parameters.instance.hideReset || false;
   const caseOption: string = parameters.instance.caseOption;
   const slugOptions: any = {};
@@ -166,8 +166,6 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
       translationConfig = translations1;
     } else if (regex.test(translations2)) {
       translationConfig = translations2;
-    } else if (regex.test(translations3)) {
-      translationConfig = translations3;
     }
 
     translationConfig
@@ -186,7 +184,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
   const partIsTranslatable = (part: string) => {
     const regex = new RegExp(`^${part}=`);
-    return regex.test(translations1) || regex.test(translations2) || regex.test(translations3);
+    return regex.test(translations1) || regex.test(translations2);
   };
 
   /**
@@ -238,7 +236,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
     }
 
     sdk.entry.fields[sdk.field.id].setValue(
-      slugParts.join('/').replace('//', '/').replace(/\/$/, ''),
+      slugParts.join('/').replace('//', '/').replace(/\/$/, '').toLowerCase(),
       locale
     );
   };
@@ -261,7 +259,7 @@ const BetterSlugs = ({ sdk }: BetterSlugsProps) => {
 
   return (
     <div className="container">
-      <input width="large" id="slug-field" name="slug" value={value || ''} onChange={onChange} />
+      <input width="large" id="slug-field" name="slug" readOnly={readonly} value={value || ''} onChange={onChange} />
       {!hideReset ? (
         <button onClick={() => updateSlug(sdk.field.locale, true)}>reset</button>
       ) : null}
