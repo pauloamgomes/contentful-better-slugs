@@ -1,6 +1,6 @@
 {
-  "id": "better-slugs",
-  "name": "Better Slugs",
+  "id": "read-only-better-slugs",
+  "name": "Read-only Better Slugs",
   "srcdoc": "./build/index.html",
   "fieldTypes": ["Symbol"],
   "parameters": {
@@ -67,7 +67,7 @@
         "description": "Set the case mode (if not defined uses lowercase)",
         "type": "Enum",
         "required": false,
-        "options": [{"maintainCase": "Maintain Case"}, {"titleCase": "Title Case"}]
+        "options": [{ "maintainCase": "Maintain Case" }, { "titleCase": "Title Case" }]
       }
     ]
   }
