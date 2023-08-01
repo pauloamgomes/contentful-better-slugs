@@ -1,3 +1,6 @@
+:warning:
+This UI Extension is deprecated and superseded by https://github.com/pauloamgomes/contentful-better-slugs-app
+
 # Contentful Better Slugs
 
 The Better Slugs is a simple UI extension for Contentful CMS that provides a more enhanced way to deal with slug fields.
